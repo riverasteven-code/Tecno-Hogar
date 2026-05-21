@@ -1,0 +1,227 @@
+body {
+    font-family: 'Oswald', sans-serif; /* Aplica Oswald a toda la página; si no carga, usa sans-serif */
+    font-weight: 400;                  /* Peso normal (ni muy fina ni muy gruesa) */
+    color: #1e1e1e;                  /* Color del texto principal (gris oscuro casi negro) */
+}
+
+/* =========== BLOQUE 1: LOGO =========== */
+
+.navbar-brand {
+    font-weight: 600;            /* Grosor de letra: 600 = semi-negrita */
+    font-size: 26px;             /* Tamaño de la letra: 26 píxeles */
+    color: #1e1e1e !important; /* Color del texto oscuro, con !important para sobrescribir Bootstrap */
+    letter-spacing: -0.2px;      /* Espacio entre letras: valor negativo junta ligeramente los caracteres */
+    transition: color 0.2s;      /* Transición suave al cambiar de color (cuando se pasa el mouse) */
+}
+
+.navbar-brand:hover {
+    color: #009970 !important; /* Al pasar el mouse, cambia al verde corporativo */
+}
+
+/* =========== COLOR VERDE 'HOGAR' =========== */
+.brand-highlight {
+    color: #009970; /* Color verde corporativo */
+}
+
+/* =========== BLOQUE 2: CATEGORÍAS (DROPDOWN) =========== */
+.nav-link.dropdown-toggle {
+    color: #1e1e1e;       /* Color del texto "Categorías" (negro) */
+    font-weight: 300;       /* Grosor */
+    font-size: 16px;        /* Tamaño de la letra */
+}
+
+.dropdown-menu {
+    border:  none;                                 /* Sin borde */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);  /* Sombra suave */
+    border-radius: 8px;                            /* Bordes redondeados */
+}
+
+.dropdown-item {
+    font-weight: 300;   /* Peso normal */
+    color: #1e1e1e;   /* Color del texto de cada opción */
+}
+
+.dropdown-item:hover {
+    background-color: #009970; /* Fondo verde al pasar el mouse */
+    color: #fff;               /* Texto blanco al pasar el mouse */
+    border-radius: 4px;          /* Bordes ligeramente redondeados al hacer hover */
+}
+
+/* =========== BLOQUE 3: BARRA DE BUSQUEDA =========== */
+.form-control {
+    font-size: 16px;         /* Tamaño del texto más grande */
+    padding-left: 1rem;    /* Espacio interno izquierdo */
+    padding-right: 2rem;   /* Espacio interno barra de busqueda */
+    border-radius: 25px;     /* Bordes redondeados */
+    border: 1px solid #ced4da;   /* Borde gris claro */
+    font-family: 'Oswald', sans-serif; /* Misma fuente */
+}
+
+.form-control:focus {
+    border-color: #009970;    /* Borde verde al hacer clic en el campo */
+    box-shadow: 0 0 0 0.2rem rgba(0, 153, 112, 0.15);   /* Resplandor verde muy sutil */
+    outline: none;              /* Elimina el contorno azul por defecto */
+}
+
+.btn-outline-teal {
+    color: #009970;         /* Color del texto e ícono (verde corporativo) */
+    border-color: #009970;  /* Color del borde (verde) */
+    border-radius: 25px;      /* Bordes redondeados igual que el campo de texto */
+    padding: 0.5rem 1.5rem;   /* Espacio interno del botón */
+    font-family: 'Oswald', sans-serif;  /* Misma fuente */
+    transition: all 0.2s;     /* Transición suave para el hover */
+}
+
+.btn-outline-teal:hover {
+    background-color: #009970; /* Fondo verde al pasar el mouse */
+    color: #fff;               /* Texto blanco al pasar el mouse */
+}
+
+/* ========== BLOQUE 4: CREAR CUENTA, INICIAR SESIÓN Y CARRITO ========== */
+
+/* Botón "Iniciar sesion" */
+.login-button {
+    background-color: #009970;   /* Fondo verde corporativo */
+    color: #fff !important;      /* Texto blanco */
+    font-weight: 300;              /* Grosor medio */
+    padding: 0.4rem 1.1rem;        /* Espacio interno */
+    border-radius: 25px;           /* Bordes redondeados */
+    text-decoration: none;         /* Quitar subrayado */
+    display: inline-block;         /* Para que el padding funcione bien */
+    transition: all 0.2s ease;     /* Animación suave */
+}
+
+.login-button:hover {
+    background-color: #007a5e; /* Verde más oscuro al pasar el mouse */
+    color: #fff !important;    /* Texto blanco */
+}
+
+/* Enlace "Crear cuenta" */
+.nav-link {
+    color: #1e1e1e;         /* Texto oscuro */
+    font-weight: 300;         /* Grosor medio */
+    transition: color 0.2s;   /* Transición suave */
+    font-size: 16px;          /* Tamaño de la letra */
+    margin-left: 0.8rem;
+}
+
+.nav-link:hover {
+    color: #009970; /* Verde al pasar el mouse */
+}
+
+/* Carrito */
+.cart-icon {
+    color: #1e1e1e;        /* Color del ícono */
+    font-size: 1.2rem;       /* Tamaño del ícono */
+    transition: color 0.2s;  /* Transición suave */
+    margin-left: 1.2rem;     /* Espacio extra a la izquierda del carrito */
+}
+
+.cart-icon:hover {
+    color: #009970;     /* Verde al pasar el mouse */
+}
+
+/* Contador del carrito */
+#cart-count {
+    background-color: #009970; /* Fondo verde */
+    color: #fff;               /* Texto blanco */
+    font-size: 0.7rem;           /* Tamaño pequeño */
+    border-radius: 50%;          /* Forma circular */
+    padding: 0.2rem 0.4rem;      /* Espacio interno pequeño */
+    position: relative;          /* Para moverlo */
+    top: -15px;                  /* Subirlo un poco */
+    left: 2px;                   /* Moverlo a la izquierda */
+}
+
+/* ========== BLOQUE 5: FONDO NAVBAR Y LÍNEA VERDE ACTIVA ========== */
+.navbar {
+    background-color: #ffffff;  /* Fondo blanco limpio */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* Sombra suave debajo de la barra */
+    /*padding-top: 0.3rem;          /* Espacio superior */
+    /*padding-bottom: 0.3rem;       /* Espacio inferior */
+    
+}
+
+/* Línea verde solo para enlaces normales (no el botón login) */
+@media (min-width: 992px) {
+    .nav-link:not(.login-button) {
+        position: relative; /*  línea de posicione respecto a este enlace */
+    }
+
+    .nav-link:not(.login-button)::before {
+        content: "";                    /* Necesario para que el pseudo-elemento exista */
+        position: absolute;
+        bottom: 0;                      /* Pegado al borde inferior del enlace */
+        left: 50%;                      /* Empieza desde el centro */
+        transform: translateX(-50%);    /* Centrado exacto */
+        width: 0%;                      /* Línea invisible al inicio */
+        height: 2px;                    /* Grosor de la línea */
+        background-color: #009970;      /* Color verde corporativo */
+        visibility: hidden;             /* Oculto por defecto */
+        transition: all 0.25s ease-in-out; /* Animación suave */
+    }
+
+    .nav-link:not(.login-button):hover::before,
+    .nav-link:not(.login-button).active::before {
+        width: 100%;          /* Se expande a lo ancho */
+        visibility: visible;  /* Se hace visible */
+    }
+}
+/* ==== BLOQUE 6: ANCHO CONTROLADO DEL BUSCADOR === */
+.search-form{
+    max-width: 520px; /* Limita el ancho máximo del buscador */
+    width: 100%; /* Permite que siga siendo responsive */
+}
+
+
+/* ----------------- HERO SECTION ----------------- */
+
+.hero-section{
+min-height: 500px; /* Altura mínima del hero */
+background-color: #f5f5f5; /* Fondo gris claro */
+padding: 4rem 0; /* Espacio arriba y abajo */
+display: flex; /* Activa flexbox */
+align-items: center; /* Centra verticalmente */
+}
+
+/* ---------- TÍTULO PRINCIPAL ---------- */
+
+.hero-title{
+font-size: 55px; /* Tamaño grande del título */
+font-weight: 700; /* Grosor fuerte */
+color: #1e1e1e; /* Color oscuro */
+margin-bottom: 1rem; /* Espacio debajo del título */
+}
+
+/* ---------- TEXTO DESCRIPTIVO ---------- */
+
+.hero-text{
+font-size: 18px; /* Tamaño del texto */
+color: #555; /* Gris suave */
+margin-bottom: 2rem; /* Espacio debajo del texto */
+}
+
+/* ---------- BOTÓN HERO ---------- */
+
+.hero-button{
+background-color: #009970; /* Fondo verde */
+color: white; /* Texto blanco */
+padding: 0.8rem 2rem; /* Espacio interno */
+border-radius: 30px; /* Bordes redondeados */
+font-size: 18px; /* Tamaño texto */
+transition: 0.3s; /* Animación suave */
+}
+
+/* ---------- HOVER BOTÓN ---------- */
+
+.hero-button:hover{
+background-color: #00795a; /* Verde más oscuro */
+color: white; /* Mantiene texto blanco */
+}
+
+/* ---------- IMAGEN HERO ---------- */
+
+.hero-image{
+max-width: 100%; /* Imagen responsive */
+border-radius: 20px; /* Bordes redondeados */
+}
