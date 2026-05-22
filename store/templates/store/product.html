@@ -1,0 +1,405 @@
+{% extends 'store/base.html' %}
+{% load static %} <!-- Permite usar archivos estáticos IMG, JS, CSS-->
+{% block title %}Detalle producto - TecnoHogar{% endblock %}
+{% block content %}
+
+<nav class="product-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+
+  <ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Laptop</a></li>
+    <li class="breadcrumb-item"><a href="#">Asus</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Portátil Asus X1502VA</li>
+
+  </ol>
+
+</nav>
+
+<div class="container product-detail">
+  <div class="row">
+    <div class="col-lg-7">
+
+        <!-- Contenedor de toda la galeria -->
+        <div class="product-gallery">
+            <!-- Miniaturas -->
+            <div class="product-miniaturas">
+            
+                <div class="miniatura-item">
+                    <img class="miniatura-img" src="{% static 'img/Miniaturas/Laptop/min1.png' %}" alt="">
+                </div>
+            
+                <div class="miniatura-item">
+                    <img class="miniatura-img" src="{% static 'img/Miniaturas/Laptop/min2.png' %}" alt="">
+                </div>
+            
+                <div class="miniatura-item">
+                    <img class="miniatura-img" src="{% static 'img/Miniaturas/Laptop/min3.png' %}" alt="">
+                </div>
+            
+                <div class="miniatura-item">
+                    <img class="miniatura-img" src="{% static 'img/Miniaturas/Laptop/min4.png' %}" alt="">
+                </div>
+            </div>
+
+        <!-- Imagen principal -->
+            <div class="product-imagen">
+                <!-- Imagen producto -->
+                <div class="main-image">
+                    <img class="main-product-img" src="{% static 'img/promos/1.png' %}" alt="">
+                </div>
+
+                <!-- Specs rápidas -->
+                <div class="product-specs">
+                    <div class="spec-item">16GB RAM</div>
+                    <div class="spec-item">1TB SSD</div>
+                    <div class="spec-item">RTX 4060</div>
+                    <div class="spec-item">144Hz</div>
+                </div>
+
+            </div>
+        </div>    
+        
+    </div> 
+
+    <!-- INFORMACION -->
+    <div class="col-lg-4">
+    <!-- Información producto -->
+     <div class="product-info">
+
+        <!-- Marca=brand -->
+        <P class="product-brand">ASUS</P>
+        
+        <!-- Nombre producto -->
+        <h1 class="product-title">Portátil Asus X1502VA</h1>
+
+        <!-- Descripción corta -->
+        <p class="product-description">Intel core i5 · 16GB RAM · 1TB SSD</p>
+
+        <!-- Rating -->
+        <div class="product-rating">
+            ⭐⭐⭐⭐⭐
+            <span>4.6(128 reseñas)</span>
+        </div>
+
+        <!-- Precio antiguo -->
+        <span class="old-price">$ 2.399.000</span>
+
+        <!-- Precio actual -->
+        <h2 class="new-prices">$ 2.129.900</h2>
+
+        <!-- Stock -->
+        <div class="product-stock">
+            <h6>✔ En stock</h6> 
+            <p class="product-envio">🚚 Envío gratis</p>
+        </div>        
+
+        <!-- Botones de compra --> 
+        <div class="product-actions">
+            <!-- Cantidad --> 
+            <div class="product-cantidad">
+                <p>Cantidad :</p>
+                <button class="cantidad-btn">-</button>
+                <span class="cantidad-numero">1</span>
+                <button class="cantidad-btn">+</button>
+            </div>
+
+            <a href="#" class="btn add-cart-btn">Agregar al carrito</a>
+            <a href="#" class="btn buy-now-btn">Comprar ahora</a>
+        </div>
+
+        <div class="product-garantia">
+            <p>✔ Compra segura</p> 
+            <p>🏅 Garantía oficial</p>
+        </div>  
+
+     </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- PESTAÑA DE PRODUCTOS -->
+<div class="product-tabs">
+    <p>Descripción</p>
+    <p>Especificaciones</p>
+    <p>Reseñas (128)</p>
+    <p>Envios y devoluciones</p>
+</div>
+
+<section class="product-details-info container">
+    <div class="row g-4">
+
+        <!-- Card descripción -->
+        <div class="col-lg-5">
+            <div class="info-card">
+                <h5 class="info-title">Rendimiento confiable para tu día a día.</h5>
+
+                <p class="info-text">
+                    El Portátil Asus X1502VA está diseñado para estudiantes, trabajo de oficina y uso diario.
+                    Con procesador Intel Core i5, 16GB de RAM y almacenamiento SSD de 1TB, ofrece una experiencia rápida,
+                    fluida y estable para navegar, estudiar, trabajar y disfrutar contenido multimedia.
+                </p>
+
+                <ul class="info-list">
+                    <li>✔ Rendimiento fluido para multitarea y productividad</li>
+                    <li>✔ 16GB de RAM para trabajar con varias aplicaciones abiertas</li>
+                    <li>✔ SSD de 1TB para mayor velocidad y amplio almacenamiento</li>
+                    <li>✔ Diseño moderno, liviano y práctico para uso diario</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card características -->
+        <div class="col-lg-4">
+            <div class="info-card">
+                <h5 class="info-title">Características destacadas</h5>
+
+                <ul class="feature-list">
+                    <li>💻 <strong>Pantalla Full HD</strong><br><span>Imagen clara para estudiar, trabajar y ver contenido</span></li>
+                    <li>⚙️ <strong>Procesador Intel Core i5</strong><br><span>Buen rendimiento para tareas diarias y multitarea</span></li>
+                    <li>💾 <strong>Memoria RAM 16GB</strong><br><span>Permite usar varias aplicaciones al mismo tiempo</span></li>
+                    <li>🚀 <strong>Almacenamiento SSD 1TB</strong><br><span>Mayor velocidad de carga y amplio espacio</span></li>
+                    <li>🔋 <strong>Diseño práctico</strong><br><span>Equipo moderno, liviano y cómodo para uso diario</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card información adicional -->
+        <div class="col-lg-3">
+            <div class="info-card">
+                <h5 class="info-title">Información adicional</h5>
+
+                <p class="info-extra"><strong>Marca:</strong> ASUS</p>
+                <p class="info-extra"><strong>Serie:</strong> VivoBook / X Series</p>
+                <p class="info-extra"><strong>Modelo:</strong> X1502VA</p>
+                <p class="info-extra"><strong>Procesador:</strong> Intel Core i5</p>
+                <p class="info-extra"><strong>Memoria:</strong> 16GB RAM</p>
+                <p class="info-extra"><strong>Almacenamiento:</strong> 1TB SSD</p>
+                <p class="info-extra"><strong>Garantía:</strong> 12 meses</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PRODUCTOS RELACIONADOS -->
+<section class="container">
+    <h4 class="related-title">Productos relacionados</h4>
+
+    <div class="related-products">
+
+        <div class="card related-card">
+            <img src="{% static 'img/Destacados/1.png' %}" class="related-img" alt="">
+            <div class="card-body">
+                <h5 class="related-card-title">MacBook Air M2 13"</h5>
+                <ul class="related-price-list">
+                    <li class="old-price-1">$ 4.500.000</li>
+                    <li class="new-price-1">$ 4.000.000</li>
+                </ul>
+                <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+            </div>
+        </div>
+
+        <div class="card related-card">
+            <img src="{% static 'img/Destacados/1.png' %}" class="related-img" alt="">
+            <div class="card-body">
+                <h5 class="related-card-title">MacBook Air M2 13"</h5>
+                <ul class="related-price-list">
+                    <li class="old-price-1">$ 4.500.000</li>
+                    <li class="new-price-1">$ 4.000.000</li>
+                </ul>
+                <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+            </div>
+        </div>
+
+        <div class="card related-card">
+            <img src="{% static 'img/Destacados/1.png' %}" class="related-img" alt="">
+            <div class="card-body">
+                <h5 class="related-card-title">MacBook Air M2 13"</h5>
+                <ul class="related-price-list">
+                    <li class="old-price-1">$ 4.500.000</li>
+                    <li class="new-price-1">$ 4.000.000</li>
+                </ul>
+                <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+            </div>
+        </div>
+
+        <div class="card related-card">
+            <img src="{% static 'img/Destacados/1.png' %}" class="related-img" alt="">
+            <div class="card-body">
+                <h5 class="related-card-title">MacBook Air M2 13"</h5>
+                <ul class="related-price-list">
+                    <li class="old-price-1">$ 4.500.000</li>
+                    <li class="new-price-1">$ 4.000.000</li>
+                </ul>
+                <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+            </div>
+        </div>
+
+        <div class="card related-card">
+            <img src="{% static 'img/Destacados/1.png' %}" class="related-img" alt="">
+            <div class="card-body">
+                <h5 class="related-card-title">MacBook Air M2 13"</h5>
+                <ul class="related-price-list">
+                    <li class="old-price-1">$ 4.500.000</li>
+                    <li class="new-price-1">$ 4.000.000</li>
+                </ul>
+                <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+            </div>
+        </div>
+
+        <div class="card related-card">
+            <img src="{% static 'img/Destacados/1.png' %}" class="related-img" alt="">
+            <div class="card-body">
+                <h5 class="related-card-title">MacBook Air M2 13"</h5>
+                <ul class="related-price-list">
+                    <li class="old-price-1">$ 4.500.000</li>
+                    <li class="new-price-1">$ 4.000.000</li>
+                </ul>
+                <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OPINIONES DE CLIENTES -->
+<section class="seccion-opiniones container">
+    <div class="row g-4">
+        <div class="col-lg-3">
+            <div class="reviews-summary-card">
+
+                <h4 class="reviews-title">Opniones de clientes</h4>
+
+                <div class="reviews-score">
+                    <span class="score-number">4.6 </span>
+                    <span class="score-stars">⭐⭐⭐⭐⭐</span>
+                </div>
+
+                <p class="reviews-based">Basado en 128 reseñas</p>
+                <!--rating-5-->
+                <div class="rating-bars">
+                    <div class="rating-row">
+                        <span>5 estrellas</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill rating-5"></div>
+                        </div>
+                        <span>82%</span>
+                    </div>
+                </div>
+                <!--rating-4-->
+                <div class="rating-bars">
+                    <div class="rating-row">
+                        <span>4 estrellas</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill rating-4"></div>
+                        </div>
+                        <span>10%</span>
+                    </div>
+                </div>
+                <!--rating-3-->
+                <div class="rating-bars">
+                    <div class="rating-row">
+                        <span>3 estrellas</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill rating-3"></div>
+                        </div>
+                        <span>5%</span>
+                    </div>
+                </div>
+                <!--rating-2-->
+                <div class="rating-bars">
+                    <div class="rating-row">
+                        <span>2 estrellas</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill rating-2"></div>
+                        </div>
+                        <span>2%</span>
+                    </div>
+                </div>
+                <!--rating-1-->
+                <div class="rating-bars">
+                    <div class="rating-row">
+                        <span>1 estrellas</span>
+                        <div class="rating-bar">
+                            <div class="rating-fill rating-1"></div>
+                        </div>
+                        <span>1%</span>
+                    </div>
+                </div>
+
+                <button class="reviews-btn">Escribir una reseña</button>
+
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+            <div class="users">
+
+                <div class="user-line">
+                    <div class="user-nom">
+                        <div class="user-icon">JP</div>
+                        <h4 class="user-h4">Juan Perez</h4>
+                        <p class="user-p">Compra verificada</p>
+                    </div>
+                    <span class="user-stars">⭐⭐⭐⭐⭐</span>
+
+                    <h5 class="user-title">Excelente rendimiento</h5>
+                    
+                    <div class="user-imagen">
+
+                        <p class="users-p">La laptop es increible, corre todos los juegos en ultra sin problemas. La pantalla 144Hz
+                        se nota demasiado. Muy recomendada.</p>
+                    
+
+                        <img src="{% static 'img/Miniaturas/Laptop/min1.png' %}" class="user-img" alt="">
+                        <img src="{% static 'img/Miniaturas/Laptop/min1.png' %}" class="user-img" alt="">
+                        <img src="{% static 'img/Miniaturas/Laptop/min1.png' %}" class="user-img" alt="">
+                    </div>
+                </div>
+
+                <div class="user-line">
+                    <div class="user-nom">
+                        <div class="user-icon">MR</div>
+                        <h4 class="user-h4">Maria Rodíguez</h4>
+                        <p class="user-p">Compra verificada</p>
+                    </div>
+                    <span class="user-stars">⭐⭐⭐⭐</span>
+
+                    <h5 class="user-title">Muy buena calidad</h5>
+                    
+                    <div class="user-imagen">
+                        <p class="users-p">Muy buena laptop, rápida y silenciosa. La bateria dura lo suficiente para trabajar
+                        y estudiar. La recomiendo.</p>
+                     </div>
+                </div>
+
+                <div class="user-line">
+                    <div class="user-nom">
+                        <div class="user-icon">LC</div>
+                        <h4 class="user-h4">Luis Castillo</h4>
+                        <p class="user-p">Compra verificada</p>
+                    </div>
+                    <span class="user-stars">⭐⭐⭐⭐⭐</span>
+
+                    <h5 class="user-title">Potencia brutal</h5>
+                    
+                    <div class="user-imagen">
+                        <p class="users-p">El procesador y la gráfica son brutales. Ideal para edicion de video y gaming</p>
+                        
+                        <div class="review-images">
+                            <img src="{% static 'img/Miniaturas/Laptop/min3.png' %}" class="user-img" alt="">
+                            <img src="{% static 'img/Miniaturas/Laptop/min3.png' %}" class="user-img" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div> 
+</section>
+
+
+{% endblock %}

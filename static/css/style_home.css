@@ -77,12 +77,13 @@
 }
 
 .ofertas {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    display: flex;           /* activamos flexbox */
+    justify-content: center; /* Centra las cards */
+    gap: 20px;               /* Espacio entre cards */
     margin-top: 20px;
     margin-bottom: 25px;
     cursor: pointer;
+    flex-wrap: wrap;        /* Permite que bajen a otra línea */
 }
 
 .card-body {
@@ -118,7 +119,7 @@
 }
 
 .new-price {
-    color: red;
+    color: rgb(255, 42, 0);
     font-size: 20px;
     font-weight: 500;
 }
@@ -142,18 +143,14 @@
     box-shadow: 0 8px 20px rgba(0,0,0,0.10); /* Sombra más premium */
 }
 
+@media (max-width: 768px) {
+    .product-card {
+        width: 90%;
+    }
+}
+
 /* ====================== CARD DESTACADOS ====================== */
 .desta-price {
     font-size: 20px;
     font-weight: 500;
 }
-
-
-/*
-.card,
-.category-card,
-.product-card {
-    background-color: var(--card-color); /* Fondo oscuro de cards */
-    /*color: var(--text-color); /* Texto blanco */
-    /*border: 1px solid rgba(255,255,255,0.08); /* Borde suave *//*
-}*/
