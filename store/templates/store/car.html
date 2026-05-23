@@ -1,6 +1,6 @@
 {% extends 'store/base.html' %}
 {% load static %} <!-- Permite usar archivos estáticos IMG, JS, CSS-->
-{% block title %}Carrito de compras - TecnoHogar{% endblock %}
+{% block title %}Carro de compras - TecnoHogar{% endblock %}
 {% block content %}
 
 <div class="main-container">
@@ -176,12 +176,77 @@
 
         <!--BENEFICIOS-->
         <section class="cart-benefits">
-            <p>BENEFICIOS</p>
+            <div class="card mb-3">     
+                <div class="benefits-list">
+
+                    <div class="benefits-body">
+                        <i class="bi bi-shield-check benefits-icon"></i>
+                        <div>
+                            <h5 class="benefits-title">Compra segura</h5>
+                            <p class="benefits-text">Tus datos están protegidos con encriptación SSL.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits-body">
+                        <i class="bi bi-truck benefits-icon"></i>
+                        <div>
+                            <h5 class="benefits-title">Envío gratis</h5>
+                            <p class="benefits-text">En compras mayores a $50.00</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits-body">
+                        <i class="bi bi-award benefits-icon"></i>
+                        <div>
+                            <h5 class="benefits-title">Garantía oficial</h5>
+                            <p class="benefits-text">Productos 100% originales con garantía del fabricante.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits-body">
+                        <i class="bi bi-headset benefits-icon"></i>
+                        <div>
+                            <h5 class="benefits-title">Soporte 24/7</h5>
+                            <p class="benefits-text">Asistencia personalizada cuando la necesites.</p>                    
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!--MÉTODO DE PAGO-->
         <section class="payment-methods">
-            <p>MÉTODO DE PAGO</p>
+            <div class="card mb-3 payment-card" >
+
+                <h3 class="payment-title"> Métodos de pago aceptados</h3>
+                    <div class="col-md-4 payment-img">
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/visa2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/master2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/American2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/paypal2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/nequi2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/bre-b2.png' %}" class="payment-logo" alt="...">
+                        </div>
+                    </div>              
+            </div>
         </section>
 
     </div>
@@ -193,10 +258,6 @@
             <p>RESUMEN COMPRAS</p>
         </section>
     </div>
-
-
-    
-
 </div>
 </div>
 

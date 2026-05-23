@@ -1,5 +1,5 @@
 body {
-    font-family: 'Oswald', sans-serif; /* Aplica Oswald a toda la página; si no carga, usa sans-serif */
+    font-family: 'Inter', sans-serif; /* Aplica Oswald a toda la página; si no carga, usa sans-serif */
     font-weight: 400;                  /* Peso normal (ni muy fina ni muy gruesa) */
     color: #1e1e1e;                  /* Color del texto principal (gris oscuro casi negro) */
 }

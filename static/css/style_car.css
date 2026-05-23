@@ -148,24 +148,99 @@ body {
     }
 }
 /*==============================  BENEFICIOS ==============================*/
-.cart-benefits {
-    background-color: #ddd;
-    border-radius: 12px;
-    margin-left: 15px;
-    margin-right: 20px;
+.benefits-list,
+.benefits-body {
+    display: flex;
 }
-.cart-benefits p {
-    padding-left: 20px;
+
+.benefits-icon {
+    display: block;
+    font-size: 35px;
+    padding: 15px 10px 0px 20px;  /* T D B I*/
+}
+
+.bi-shield-check {
+    color: #009970;
+}
+
+.benefits-title {
+    font-size: 14px;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.benefits-text {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+@media (max-width: 768px) {
+    .benefits-title, .benefits-text {
+        display: none;
+    }
+    .benefits-list {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+    .benefits-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .benefits-icon {
+        padding: 15px;
+        font-size: 25px;
+    }
 }
 
 /*==============================  MÉTODO DE PAGO ==============================*/
-.payment-methods {
-    background-color: #ddd;
+.payment-card {
     border-radius: 12px;
-    margin-left: 15px;
-    margin-right: 20px;
+    padding: 20px;
 }
 
+.payment-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.payment-img {
+    display: flex;
+    gap: 10px;
+    /*flex-wrap: nowrap;*/
+    align-items: center;
+}
+
+.payment-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.payment-logo {
+    width: 70px;
+    height: 35px;
+}
+
+@media (max-width: 768px) {
+    .payment-img {
+        flex-wrap: wrap;
+    }
+    .payment-title {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 15px;
+    }
+    .payment-logo {
+        width: 40px;
+        height: 20px;
+    }
+}
 /*==============================  RESUMEN COMPRAS ==============================*/
 .cart-summary {
     background-color: #ddd;
