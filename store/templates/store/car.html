@@ -1,0 +1,203 @@
+{% extends 'store/base.html' %}
+{% load static %} <!-- Permite usar archivos estáticos IMG, JS, CSS-->
+{% block title %}Carrito de compras - TecnoHogar{% endblock %}
+{% block content %}
+
+<div class="main-container">
+<div class="row g-4">
+
+    <div class="col-lg-8">
+        <!--Titulo-->
+        <div class="car-title">
+            <h1 class="title">Carrito de compras</h1>
+            <p class="car-p">Revisa tus productos antes de finalizar la compra</p>
+        </div>
+
+        <!--Pestañas-->
+        <div class="car-tabs">
+            <p class="car-tabs-p">Producto</p>
+            <p>Precio unitario</p>
+            <p>Cantidad</p>
+            <p>Subtotal</p>
+        </div>
+
+        <section class="container-car">
+            <!-- Producto 1 del carrito -->
+            <div class="card mb-3 cart-card">
+
+                <div class="row g-0 align-items-center cart-row">
+
+                    <div class="col-md-2">
+                        <img src="{% static 'img/Miniaturas/Laptop/min1.png' %}" class="img-fluid rounded-start cart-img" alt="...">
+                    </div>
+
+                    <!-- Información producto -->
+                    <div class="col-md-4"> 
+                        <div class="card-body">
+                            <h5 class="card-title">Portátil Asus X1502VA</h5>
+                            <p class="card-text">ASUS · Laptop</p>
+                            <p class="card-text">
+                                <small class="text-body-secondary">El Portátil Asus X1502VA Con procesador Intel Core i5,
+                                    16GB de RAM y almacenamiento SSD de 1TB.
+                                </small>
+                            </p>
+                        </div>
+                    </div> 
+
+                    <!-- Precio, cantidad, subtotal, eliminar -->
+                    <div class="col-md-6">
+                        <div class="cart-number">
+
+                            <!-- Parte 2: precio unitario -->
+                            <p class="cart-price">$ 2.129.900</p>
+                    
+                            <!-- Parte 3: cantidad -->
+                            <div class="cart-quantity">
+                                <!--<button>-</button>-->
+                                <i class="bi bi-dash"></i>
+                                <span> 1 </span>
+                                <i class="bi bi-plus-lg"></i>
+                                <!--<button>+</button>-->
+                            </div>
+                    
+                            <!-- Parte 4: subtotal -->
+                            <p class="cart-subtotal">$ 2.129.900</p>
+
+                            <!-- Parte 5: basura -->
+                            <i class="bi bi-trash"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Producto 2 del carrito -->
+             <div class="card mb-3 cart-card">
+
+                <div class="row g-0 align-items-center cart-row">
+
+                    <div class="col-md-2">
+                        <img src="{% static 'img/Miniaturas/Monitor/min1.png' %}" class="img-fluid rounded-start cart-img" alt="...">
+                    </div>
+
+                    <!-- Información producto -->
+                    <div class="col-md-4"> 
+                        <div class="card-body">
+                            <h5 class="card-title">Monitor Gamer LG UltraGearTM 27" FHD IPS</h5>
+                            <p class="card-text">ASUS · Laptop</p>
+                            <p class="card-text">
+                                <small class="text-body-secondary">El Portátil Asus X1502VA Con procesador Intel Core i5,
+                                    16GB de RAM y almacenamiento SSD de 1TB.
+                                </small>
+                            </p>
+                        </div>
+                    </div> 
+
+                    <!-- Precio, cantidad, subtotal, eliminar -->
+                    <div class="col-md-6">
+                        <div class="cart-number">
+
+                            <!-- Parte 2: precio unitario -->
+                            <p class="cart-price">$ 729.900</p>
+                    
+                            <!-- Parte 3: cantidad -->
+                            <div class="cart-quantity">
+                                <!--<button>-</button>-->
+                                <i class="bi bi-dash"></i>
+                                <span> 1 </span>
+                                <i class="bi bi-plus-lg"></i>
+                                <!--<button>+</button>-->
+                            </div>
+                    
+                            <!-- Parte 4: subtotal -->
+                            <p class="cart-subtotal">$ 729.900</p>
+
+                            <!-- Parte 5: basura -->
+                            <i class="bi bi-trash"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Producto 3 del carrito -->
+             <div class="card mb-3 cart-card">
+
+                <div class="row g-0 align-items-center cart-row">
+
+                    <div class="col-md-2">
+                        <img src="{% static 'img/Miniaturas/Audifonos/min1.png' %}" class="img-fluid rounded-start cart-img" alt="...">
+                    </div>
+
+                    <!-- Información producto -->
+                    <div class="col-md-4"> 
+                        <div class="card-body">
+                            <h5 class="card-title">Sony WH-1000XM5</h5>
+                            <p class="card-text">Audio</p>
+                            <p class="card-text">
+                                <small class="text-body-secondary">El Portátil Asus X1502VA Con procesador Intel Core i5,
+                                    16GB de RAM y almacenamiento SSD de 1TB.
+                                </small>
+                            </p>
+                        </div>
+                    </div> 
+
+                    <!-- Precio, cantidad, subtotal, eliminar -->
+                    <div class="col-md-6">
+                        <div class="cart-number">
+
+                            <!-- Parte 2: precio unitario -->
+                            <p class="cart-price">$ 999.900</p>
+                    
+                            <!-- Parte 3: cantidad -->
+                            <div class="cart-quantity">
+                                <!--<button>-</button>-->
+                                <i class="bi bi-dash"></i>
+                                <span> 1 </span>
+                                <i class="bi bi-plus-lg"></i>
+                                <!--<button>+</button>-->
+                            </div>
+                    
+                            <!-- Parte 4: subtotal -->
+                            <p class="cart-subtotal">$ 999.900</p>
+
+                            <!-- Parte 5: basura -->
+                            <i class="bi bi-trash"></i>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!--BENEFICIOS-->
+        <section class="cart-benefits">
+            <p>BENEFICIOS</p>
+        </section>
+
+        <!--MÉTODO DE PAGO-->
+        <section class="payment-methods">
+            <p>MÉTODO DE PAGO</p>
+        </section>
+
+    </div>
+
+
+    <div class="col-lg-4">
+        <!--RESUMEN COMPRAS-->
+        <section class="cart-summary">
+            <p>RESUMEN COMPRAS</p>
+        </section>
+    </div>
+
+
+    
+
+</div>
+</div>
+
+{% endblock %}
