@@ -175,7 +175,7 @@
 
 
         <!--BENEFICIOS-->
-        <section class="cart-benefits">
+        <section class="cart-benefits  benefits-pc">
             <div class="card mb-3">     
                 <div class="benefits-list">
 
@@ -216,7 +216,7 @@
         </section>
 
         <!--MÉTODO DE PAGO-->
-        <section class="payment-methods">
+        <section class="payment-methods payment-pc">
             <div class="card mb-3 payment-card" >
 
                 <h3 class="payment-title"> Métodos de pago aceptados</h3>
@@ -252,10 +252,107 @@
     </div>
 
 
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <!--RESUMEN COMPRAS-->
         <section class="cart-summary">
-            <p>RESUMEN COMPRAS</p>
+            <h3 class="summary-title">Resumen de compra</h3>
+
+            <div class="summary-subtotal">
+                <p>Subtotal (3 productos)</p>
+                <p>$ 5.198.000</p>
+            </div>
+            <div class="summary-descuento">
+                <p>Descuento</p>
+                <p>$ - 1.338.300</p>
+            </div>
+            <div class="summary-envio">
+                <p>Envio</p>
+                <p class="summary-free">Gratis</p>
+            </div>
+            <div class="summary-total">
+                <p>Total a pagar</p>
+                <p class="summary-total-p" >$ 3.859.700</p>
+            </div>
+
+            <input type="text" class="coupon-input" placeholder="Ingresa tu cupón de descuento">
+            <button class="btn-cupon">Aplicar cupón</button>
+            <button class="btn-compraf"><i class="bi bi-lock"></i> Finalizar compra</button>
+            <button class="btn-Scompra"><i class="bi bi-arrow-left"></i> Seguir comprando</button>
+        </section>
+
+        <!--BENEFICIOS-->
+        <section class="cart-benefits benefits-movil">
+            <div class="card mb-3">     
+                <div class="benefits-list">
+
+                    <div class="benefits-body">
+                        <i class="bi bi-shield-check benefits-icon"></i>
+                        <div>
+                            <h5 class="benefits-title">Compra segura</h5>
+                            <p class="benefits-text">Tus datos están protegidos con encriptación SSL.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits-body">
+                        <i class="bi bi-truck benefits-icon"></i>
+                        <div>
+                            <h5 class="benefits-title">Envío gratis</h5>
+                            <p class="benefits-text">En compras mayores a $50.00</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits-body">
+                        <i class="bi bi-award benefits-icon"></i>
+                        <div>
+                            <h5 class="benefits-title">Garantía oficial</h5>
+                            <p class="benefits-text">Productos 100% originales con garantía del fabricante.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits-body">
+                        <i class="bi bi-headset benefits-icon"></i>
+                        <div>
+                            <h5 class="benefits-title">Soporte 24/7</h5>
+                            <p class="benefits-text">Asistencia personalizada cuando la necesites.</p>                    
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!--MÉTODO DE PAGO-->
+        <section class="payment-methods  payment-movil">
+            <div class="card mb-3 payment-card" >
+
+                <h3 class="payment-title"> Métodos de pago aceptados</h3>
+                    <div class="col-md-4 payment-img">
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/visa2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/master2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/American2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/paypal2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/nequi2.png' %}" class="payment-logo" alt="...">
+                        </div>
+
+                        <div class="payment-item">
+                        <img src="{% static 'img/payment/bre-b2.png' %}" class="payment-logo" alt="...">
+                        </div>
+                    </div>              
+            </div>
         </section>
     </div>
 </div>

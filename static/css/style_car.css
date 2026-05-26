@@ -178,22 +178,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    .benefits-title, .benefits-text {
+    .benefits-pc {
         display: none;
-    }
-    .benefits-list {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-    }
-    .benefits-body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .benefits-icon {
-        padding: 15px;
-        font-size: 25px;
     }
 }
 
@@ -228,6 +214,136 @@ body {
 }
 
 @media (max-width: 768px) {
+    .payment-pc {
+        display: none;
+    }
+}
+
+/*==============================  RESUMEN COMPRAS ==============================*/
+.cart-summary {
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.summary-title {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.summary-subtotal,.summary-descuento,
+.summary-envio,.summary-total {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    /*font-weight: 500;*/
+}
+
+.summary-descuento p,
+.summary-free {
+    color: #009970;
+}
+
+.summary-envio {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.summary-total-p {
+    color: red;
+    font-weight: bold;
+}
+
+.coupon-input {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-cupon {
+    background-color: #007567;
+    border-radius: 12px;
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    border: none;
+    margin-bottom: 30px;
+}
+
+.btn-compraf {
+    background-color: #007567;
+    border-radius: 12px;
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    color: white;
+    border: none;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.btn-Scompra {
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #009970;
+    color: #009970;
+    padding: 10px;
+    background-color: white;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .cart-summary {
+        margin-top: 0;
+    }
+}
+
+/*==============================  BENEFICIOS ( Movil)  ==============================*/
+.benefits-movil {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .benefits-movil {
+        display: block;
+        margin-top: 20px;
+    }
+
+    .benefits-title, .benefits-text {
+        display: none;
+    }
+    .benefits-list {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+    }
+    .benefits-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .benefits-icon {
+        padding: 15px;
+        font-size: 25px;
+    }
+}
+
+/*==============================  MÉTODO DE PAGO ( Movil ) ==============================*/
+.payment-movil {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .payment-movil {
+        display: block;
+    }
+
     .payment-img {
         flex-wrap: wrap;
     }
@@ -240,10 +356,4 @@ body {
         width: 40px;
         height: 20px;
     }
-}
-/*==============================  RESUMEN COMPRAS ==============================*/
-.cart-summary {
-    background-color: #ddd;
-    border-radius: 12px;
-    margin-top: 80px;
 }
