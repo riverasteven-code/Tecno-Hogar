@@ -1,0 +1,421 @@
+{% extends 'store/base.html' %}
+{% load static %} <!-- Permite usar archivos estáticos IMG, JS, CSS-->
+{% block title %}Categorias - TecnoHogar{% endblock %}
+{% block content %}
+
+<section class="filters-sidebar-title">
+
+    <nav class="product-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Laptop</li>
+        </ol>
+    </nav>
+
+   <div class="filters-header">
+        <h2 class="filters-title">Laptops</h2>
+        <p class="filters-subtitle">Encuentra los mejores portátiles para estudiar, trabajar y jugar</p>
+    </div> 
+
+</section>
+
+<!--
+
+                                    <label class="filter-option">
+                                        <input type="checkbox"> HP
+                                    </label>
+
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Lenovo
+                                    </label>
+
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Dell
+                                    </label>
+
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Asus
+                                    </label>
+
+                                    <label class="filter-option">
+                                        <input type="checkbox"> Acer
+                                    </label>
+
+                        <div class="filter-group precio">
+                
+                            <h5 class="filter-title">Precio
+                                <i class="bi bi-arrow-down-short"></i>
+                            </h5>
+                
+                            <p class="price-range-text">$10.000 - $15.000.000</p>
+                            <input type="range" class="form-range price-range" min="10000" max="15000000" value="8000000">
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Menos de $1.000.000
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> $1.000.000 - $3.000.000
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> 3.000.000 - $5.000.000
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Más de $5.000.000
+                            </label>
+                
+                        </div>
+                
+                        <div class="filter-group procesador">
+                            <h5 class="filter-title">Procesador
+                                <i class="bi bi-arrow-down-short"></i>
+                            </h5>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Intel Core i3
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Intel Core i5
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Intel Core i7
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Intel Core i9
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> AMD Ryzen 3
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> AMD Ryzen 5
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> AMD Ryzen 7
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Apple M1
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Apple M2
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Apple M3
+                            </label>
+                
+                            <p>Ver más</p>
+                
+                        </div>
+                
+                        <div class="filter-group tarjeta">
+                            <h5 class="filters-title">Tarjeta gráfica
+                                <i class="bi bi-arrow-down-short"></i>
+                            </h5>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Integrada
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> NVIDIA GTX
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> NVIDIA RTX
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> AMD Radeon
+                            </label>
+                        </div>
+                
+                        <div class="filter-group ram">
+                            <h5 class="filter-title">Memoria RAM
+                                <i class="bi bi-arrow-down-short"></i>
+                            </h5>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> 4 GB
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> 8 GB
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> 16 GB
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> 24 GB
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> 32GB
+                            </label>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> 64 GB
+                            </label>
+                
+                            <p>Ver más</p>
+                        </div>
+                
+                        <div class="filter-group almacenamiento">
+                
+                            <h5 class="filters-title">Almacenamiento
+                                <i class="bi bi-arrow-down-short"></i>
+                            </h5>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> 128 GB
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> 256 GB
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> 512 GB
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> 1 TB
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> 2 TB
+                            </label>
+                
+                        </div>
+                
+                        <div class="filter-group SO">
+                            <h5 class="filters-title">Sistema operativo
+                                <i class="bi bi-arrow-down-short"></i>
+                            </h5>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> Windows 11
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> macOS
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Linux
+                            </label>
+                
+                        </div>
+                
+                        <div class="filter-group disponible">
+                            <h5 class="filters-title">Disponibilidad
+                                <i class="bi bi-arrow-down-short"></i>
+                            </h5>
+                
+                            <label class="filter-option">
+                                <input type="checkbox"> En stock
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Últimas unidades
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox"> Preventa
+                            </label>
+                
+                        </div>
+                
+                        <button><i class="bi bi-sliders"></i>Aplicar filtros</button>
+                        <button><i class="bi bi-trash"></i>Limpiar filtros</button>
+-->
+<div class="categories-page">
+    <div class="row">
+
+        <div class="col-lg-3">
+            <section class="filters-sidebar">
+                <p>filtros</p>
+            </section>
+        </div>
+
+
+        <div class="col-lg-9">
+            <section class="products-area">
+
+                <div class="products-toolbar">
+                    <p class="products-count">128 productos encontrados</p>
+
+                    <div class="products-tool">
+                        <p class="products-sort">Ordenado por:</p>
+                        <select  id="orden" class="dropdown">
+                            <option value="recientes">Más recientes</option>
+                            <option value="antiguos">Más antiguos</option>
+                            <option value="populares">Más populares</option>
+                        </select>
+                    </div>
+                </div>
+
+                <section class="main-category-card">
+                    <div class="category-card">
+                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
+                    
+                        <div class="card-body">
+                            <p class="category-brand">Marca</p>
+                            <h5 class="category-name">MacBook Air M2 13"</h5>
+                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
+                            <ul class="category-price-list ">
+                                <li class="category-old-price">$ 4.500.000</li>
+                                <li class="category-new-price">$ 4.000.000</li>
+                            </ul>
+                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
+                            <div class="category-buttons">
+                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
+                            </div>
+                            </div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
+                    
+                        <div class="card-body">
+                            <p class="category-brand">Marca</p>
+                            <h5 class="category-name">MacBook Air M2 13"</h5>
+                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
+                            <ul class="category-price-list ">
+                                <li class="category-old-price">$ 4.500.000</li>
+                                <li class="category-new-price">$ 4.000.000</li>
+                            </ul>
+                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
+                            <div class="category-buttons">
+                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
+                            </div>
+                            </div>
+                    </div>
+                    
+                    <div class="category-card">
+                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
+                    
+                        <div class="card-body">
+                            <p class="category-brand">Marca</p>
+                            <h5 class="category-name">MacBook Air M2 13"</h5>
+                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
+                            <ul class="category-price-list ">
+                                <li class="category-old-price">$ 4.500.000</li>
+                                <li class="category-new-price">$ 4.000.000</li>
+                            </ul>
+                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
+                            <div class="category-buttons">
+                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
+                            </div>
+                            </div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
+                    
+                        <div class="card-body">
+                            <p class="category-brand">Marca</p>
+                            <h5 class="category-name">MacBook Air M2 13"</h5>
+                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
+                            <ul class="category-price-list ">
+                                <li class="category-old-price">$ 4.500.000</li>
+                                <li class="category-new-price">$ 4.000.000</li>
+                            </ul>
+                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
+                            <div class="category-buttons">
+                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
+                            </div>
+                            </div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
+                    
+                        <div class="card-body">
+                            <p class="category-brand">Marca</p>
+                            <h5 class="category-name">MacBook Air M2 13"</h5>
+                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
+                            <ul class="category-price-list ">
+                                <li class="category-old-price">$ 4.500.000</li>
+                                <li class="category-new-price">$ 4.000.000</li>
+                            </ul>
+                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
+                            <div class="category-buttons">
+                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
+                            </div>
+                            </div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
+                    
+                        <div class="card-body">
+                            <p class="category-brand">Marca</p>
+                            <h5 class="category-name">MacBook Air M2 13"</h5>
+                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
+                            <ul class="category-price-list ">
+                                <li class="category-old-price">$ 4.500.000</li>
+                                <li class="category-new-price">$ 4.000.000</li>
+                            </ul>
+                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
+                            <div class="category-buttons">
+                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
+                            </div>
+                            </div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
+                    
+                        <div class="card-body">
+                            <p class="category-brand">Marca</p>
+                            <h5 class="category-name">MacBook Air M2 13"</h5>
+                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
+                            <ul class="category-price-list ">
+                                <li class="category-old-price">$ 4.500.000</li>
+                                <li class="category-new-price">$ 4.000.000</li>
+                            </ul>
+                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
+                            <div class="category-buttons">
+                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
+                            </div>
+                            </div>
+                    </div>
+
+                    <div class="category-card">
+                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
+                    
+                        <div class="card-body">
+                            <p class="category-brand">Marca</p>
+                            <h5 class="category-name">MacBook Air M2 13"</h5>
+                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
+                            <ul class="category-price-list ">
+                                <li class="category-old-price">$ 4.500.000</li>
+                                <li class="category-new-price">$ 4.000.000</li>
+                            </ul>
+                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
+                            <div class="category-buttons">
+                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
+                            </div>
+                            </div>
+                    </div>
+
+
+                </section>
+                
+
+            </section>
+        </div>
+
+    </div>
+</div>2
+
+
+
+{% endblock %}

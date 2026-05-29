@@ -11,3 +11,12 @@ def product(request):
 
 def car(request):
     return render(request, 'store/car.html')
+
+def login(request):
+    return render(request, 'store/login.html')
+
+def register(request):
+    return render(request, 'store/register.html')
+
+def categorias(request):
+    return render(request, 'store/categorias.html')

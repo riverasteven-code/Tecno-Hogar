@@ -1,0 +1,156 @@
+.container-r {
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 12px;
+}
+
+.register-img {
+    width: 100%; /* Ocupa todo el ancho de su columna */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    object-fit: cover; /* Llena el espacio sin deformarse */
+}
+
+.register-form-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-title {
+    margin-top: 10px;
+    margin-bottom: -2px;
+    font-weight: bold;
+}
+
+.register-subtitle {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.register-nombre, .register-correo,
+.register-password {
+    margin-bottom: 10px;
+}
+
+.register-nombre p, .register-correo p,
+.register-password p {
+    margin-bottom: 5px;
+    font-size: 13px ;
+}
+/*
+.register-nombre input, .register-correo input,
+.register-celular input, .register-password input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 400px;
+}*/
+
+.register-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding-bottom: 15px;
+}
+
+.register-box input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #009970;
+    cursor: pointer;
+}
+
+.register-box label {
+    color: #009970;
+    font-weight: 700;
+}
+
+.btn-1 {
+    background-color: #009970;
+    width: 400px;
+    color: white;
+    font-size: 15px;
+    border-radius: 12px;
+    padding: 12px;
+    border: none;
+}
+
+.register-btn p {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    font-size: 15px;
+}
+
+.icon-google {
+    width: 6%;
+    height: 6%;
+    margin-right: 15px;
+}
+
+.btn-google {
+    background-color: white;
+    width: 400px;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.register-register{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.register-p {
+    color: #009970;
+    font-weight: bold;
+}
+
+/* ====================================================================================== */
+.input-box-register{
+    position: relative; /* Permite posicionar el icono dentro del input */
+}
+
+.input-box-register input {
+    width: 400px; /* Mantiene el mismo ancho que ya estabas usando */
+    padding: 10px 15px 10px 40px; /* Deja espacio a la izquierda para el icono */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 12px; /* Bordes redondeados */
+}
+
+.input-icon-register {
+    position: absolute; /* Mete el icono dentro del input */
+    left: 14px; /* Distancia desde la izquierda */
+    top: 50%; /* Lo ubica a la mitad del input */
+    transform: translateY(-50%); /* Lo centra verticalmente */
+    color: #666; /* Color gris */
+    font-size: 16px; /* Tamaño del icono */
+}
+
+.input-eye {
+    position: absolute; /* Mete el ojo dentro del input */
+    right: 14px; /* Lo pone a la derecha */
+    top: 50%; /* Lo ubica a la mitad */
+    transform: translateY(-50%); /* Lo centra verticalmente */
+    color: #666; /* Color gris */
+    font-size: 16px; /* Tamaño */
+    cursor: pointer; /* Manito al pasar */
+}
+
+/* ================================= Movil ===================================== */
+@media (max-width: 768px) {
+    .register-img {
+        display: none;
+    }
+
+    .register-page {
+        padding: 25px 20px 20px 20px;
+        height: 92vh;
+    }
+}

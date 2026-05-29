@@ -1,0 +1,150 @@
+.container-l {
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 12px;
+}
+
+.login-img {
+    width: 100%; /* Ocupa todo el ancho de su columna */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    object-fit: cover; /* Llena el espacio sin deformarse */
+}
+
+.login-form-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-title {
+    margin-top: 20px;
+    margin-bottom: -2px;
+    font-weight: bold;
+}
+
+.login-subtitle {
+    color: gray;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.login-correo,
+.login-password {
+    margin-bottom: 15px;
+}
+
+.login-correo p,
+.login-password p {
+    margin-bottom: 2px;
+    font-size: 13px ;
+}
+/*
+.login-correo input,
+.login-password input{
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    width: 400px;
+}*/
+
+.login-box {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.login-box input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #009970;
+    cursor: pointer;
+}
+
+.btn-1 {
+    background-color: #009970;
+    width: 400px;
+    color: white;
+    font-size: 15px;
+    border-radius: 12px;
+    padding: 12px;
+    border: none;
+}
+
+.login-btn p {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    font-size: 15px;
+}
+
+.icon-google {
+    width: 6%;
+    height: 6%;
+    margin-right: 15px;
+}
+
+.btn-google {
+    background-color: white;
+    width: 400px;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.login-register {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.register-p {
+    color: #009970;
+    font-weight: bold;
+}
+
+/* ====================================================================================== */
+.input-box {
+    position: relative; /* Permite posicionar el icono dentro del input */
+}
+
+.input-box input {
+    width: 400px; /* Mantiene el mismo ancho que ya estabas usando */
+    padding: 10px 15px 10px 40px; /* Deja espacio a la izquierda para el icono */
+    border: 1px solid #ddd; /* Borde suave */
+    border-radius: 12px; /* Bordes redondeados */
+}
+
+.input-icon {
+    position: absolute; /* Mete el icono dentro del input */
+    left: 14px; /* Distancia desde la izquierda */
+    top: 50%; /* Lo ubica a la mitad del input */
+    transform: translateY(-50%); /* Lo centra verticalmente */
+    color: #666; /* Color gris */
+    font-size: 16px; /* Tamaño del icono */
+}
+
+.input-eye {
+    position: absolute; /* Mete el ojo dentro del input */
+    right: 14px; /* Lo pone a la derecha */
+    top: 50%; /* Lo ubica a la mitad */
+    transform: translateY(-50%); /* Lo centra verticalmente */
+    color: #666; /* Color gris */
+    font-size: 16px; /* Tamaño */
+    cursor: pointer; /* Manito al pasar */
+}
+
+/* ================================= Movil ===================================== */
+@media (max-width: 768px) {
+    .login-img {
+        display: none;
+    }
+
+    .login-page {
+        padding: 80px 20px 20px 20px;
+        height: 92vh;
+    }
+}

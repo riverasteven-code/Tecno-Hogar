@@ -1,0 +1,72 @@
+{% extends 'store/base.html' %}
+{% load static %} <!-- Permite usar archivos estáticos IMG, JS, CSS-->
+{% block title %}login - TecnoHogar{% endblock %}
+{% block navbar %}
+{% endblock %}
+{% block content %}
+
+
+<div class="container-fluid login-page ">
+    <div class="row">
+
+        <!-- Lado izquierdo: imagen -->
+        <section class="login-image-side col-lg-6">
+            <img class="login-img" src="{% static 'img/login/1.png' %}" alt="">
+        </section>
+
+        <!-- Lado derecho: formulario -->
+        <section class="login-form-side col-lg-6">
+
+            <div class="login-container container-l">
+
+                <a class="navbar-brand" href="#">Tecno <span class="brand-highlight">Hogar</span></a>
+
+                <h2 class="login-title">Iniciar sesión</h2>
+                <p class="login-subtitle">Accede a tu cuenta para continuar comprando</p>
+
+                <div class="login-correo">
+                    <p>Correo electrónico</p>
+                    <div class="input-box">
+                        <i class="bi bi-envelope input-icon"></i>
+                        <input type="email" placeholder="tu@email.com">
+                    </div>
+                </div>
+
+                <div class="login-password">
+                    <p>Contraseña</p>
+                    <div class="input-box">
+                        <i class="bi bi-lock input-icon"></i>
+                        <input type="password" placeholder="********">
+                        <i class="bi bi-eye-slash input-eye"></i>
+                    </div> 
+                </div>
+
+                <div class="login-box">
+                    <div>
+                        <input class="box" type="checkbox" id="remember" checked|>
+                        <label for="remember">Recordarme</label>
+                    </div>
+
+                    <p>¿Olvidaste tu contraseña?</p>
+                </div>
+
+                <div class="login-btn">
+                    <button class="btn-1">Iniciar sesión</button>
+                    <p> o continúa con</p>
+                    <button class="btn-google">
+                        <img class="icon-google" src="{% static 'img/Icon/icon-google.png' %}" alt="">
+                    Continuar con Google</button>
+                </div>
+
+                <div class="login-register">
+                    <p>¿No tienes cuenta?</p>
+                    <p class="register-p">Crear cuenta</p>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,8 +1,4 @@
 /* ====================== CARRUCEL ====================== */
-.carousel {
-    margin-top: 62px;
-}
-
 .carousel-item img{
     width: 100%;    /* Ocupa todo el ancho */
     height: 380px;  /* Altura fija pc */
