@@ -1,11 +1,3 @@
-/*.container-burger{
-    background-color: white;
-    border-radius: 12px;
-    border: 1px solid #ddd;
-    margin-left: 20px;
-    margin-bottom: 20px;
-}*/
-
 .filters-sidebar-title {
     padding: 0 20px 0 20px;
 }
@@ -23,7 +15,7 @@
 /* ===============================  CONTENEDOR PRINCIPAL: =============================== */
 
 .categories-page {
-    height: 100vh;
+    /*height: 100vh;*/
     padding: 20px;
 }
 
@@ -33,6 +25,75 @@
     border: 1px solid #ddd;
     border-radius: 12px;
 }
+
+/* ===============================  FILTROS: =============================== */
+
+.filters-sidebar {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.filters-sidebar button{
+    font-weight: bold;
+}
+
+.filter-btn {
+    padding: 15px;
+    background-color: white;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+.filter-btn i {
+    color: #009970;
+}
+
+.accordion-header {
+    padding: 15px;
+    background-color: white;
+    border: none;
+    width: 100%;
+    /*border: 1px solid #ddd;*/
+}
+
+.accordion-header button {
+    font-weight: bold;
+}
+
+.accordion-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.filter-option {
+    display: flex;
+    font-size: 15px;
+    gap: 10px;
+}
+
+.filter-option input[type="checkbox"] {
+    accent-color: #009970;
+    cursor: pointer;
+}
+
+.detail-link {
+    color: #009970;
+    text-decoration: none;
+    padding: 15px;
+    font-weight: bold;
+}
+
+
 
 /* ===============================  ORDENAR POR: =============================== */
 .products-toolbar {
@@ -63,6 +124,15 @@
     padding: 5px;
     border-radius: 12px;
     cursor: pointer;
+}
+
+@media (max-width:768px) {
+    .products-count {
+        display: none;
+    }
+    .products-tool {
+        gap: 70px;
+    }
 }
 
 /* ===============================  CATEGORIAS CARD =============================== */
@@ -162,4 +232,81 @@
     text-decoration: underline;
 }
 
-/* ===============================  ------------- =============================== */
+/* ===============================  CATEGORIAS CARD (Movil) =============================== */
+@media (max-width: 991px) {
+    .main-category-card {
+        gap: 15px;
+    }
+    .category-card {
+        width: calc(33% - 10px); /* 2 cards por fila en tablet vertical */
+    }
+     .category-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    .category-cart-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .category-detail-link {
+        font-size: 16px;
+    }   
+}
+
+@media (max-width:768px) {
+    .category-card {
+        width: calc(100% - 10px);
+        margin-bottom: -15px;
+    }
+    .category-img  {
+        height: 130px;
+        object-fit: contain;
+        padding: 5px 5px 0px 5px;
+    }
+    .category-price-list {
+        display: flex;
+        flex-direction: column;
+    }
+    .category-new-price {
+        margin-top: -25px;
+        font-size: 20px;
+    }
+    .category-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    .category-cart-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+/* ===============================  CATEGORIAS CARD (Tablet) =============================== */
+@media (min-width: 992px) {
+    #filtrosCategorias {
+        display: block;
+    }
+    .category-price-list {
+        display: flex;
+        flex-direction: column;
+    }
+    .category-new-price {
+        margin-top: -25px;
+        font-size: 20px;
+    }
+    .category-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+    .category-cart-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
