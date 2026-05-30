@@ -113,7 +113,7 @@
 
 .product-stock  {
     display: flex;
-    gap: 250px;
+    gap: 220px;
     font-size: 14px;
     margin-top: 20px;
 }
@@ -132,7 +132,7 @@
     margin-top: 20px;
     margin-bottom: 10px;
     font-size: 14px;
-    gap: 220px;
+    gap: 160px;
     color: #555;
 }
 
@@ -397,8 +397,7 @@
 
 .related-price-list {
     display: flex;
-    justify-content: center;
-    gap: 8px;
+    justify-content: space-between;
     padding-left: 0;
     list-style: none;
 }
@@ -406,11 +405,11 @@
 .old-price-1 {
     text-decoration: line-through; /* Tacha el precio anterior */
     color: #777;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .new-price-1 {
-    color: rgb(255, 42, 0);
+    color: red;
     font-size: 16px;
     font-weight: 500;
 }

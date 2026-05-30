@@ -224,3 +224,90 @@ color: white; /* Mantiene texto blanco */
 max-width: 100%; /* Imagen responsive */
 border-radius: 20px; /* Bordes redondeados */
 }
+
+/* =============================      FOOTER      ============================= */
+
+.footer {
+    background-color: #323232; /* Fondo oscuro del footer */
+    padding: 25px 20px 15px; /* Espacio interno */
+    font-size: 14px; /* Tamaño general del texto */
+    margin-top: 40px; /* Espacio arriba del footer */
+}
+
+.footer-main {
+    display: flex; /* Coloca las columnas en fila */
+    justify-content: space-around; /* Reparte las columnas */
+    align-items: flex-start; /* Alinea las columnas arriba */
+    gap: 40px; /* Espacio entre columnas */
+    border-bottom: 1px solid #555; /* Línea separadora */
+    padding-bottom: 20px; /* Espacio antes de la línea */
+}
+
+.footer-container {
+    text-align: center; /* Centra el texto de cada columna */
+}
+
+.footer-title {
+    font-weight: bold; /* Títulos en negrita */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    color: white; /* Color blanco */
+}
+
+.footer-list {
+    list-style: none; /* Quita los puntos */
+    padding: 0; /* Quita padding */
+    margin: 0; /* Quita margen */
+}
+
+.footer-list li {
+    margin: 5px 0; /* Espacio entre links */
+}
+
+.footer-list a {
+    text-decoration: none; /* Quita subrayado */
+    color: rgba(255, 255, 255, 0.75); /* Blanco suave */
+    transition: 0.25s; /* Animación suave */
+}
+
+.footer-list a:hover {
+    color: #009970; /* Verde al pasar mouse */
+}
+
+.footer-social {
+    display: flex; /* Pone iconos en línea */
+    justify-content: center; /* Centra iconos */
+    gap: 15px; /* Espacio entre iconos */
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.75); /* Color iconos */
+    font-size: 28px; /* Tamaño iconos */
+    transition: 0.25s; /* Animación suave */
+}
+
+.footer-social a:hover {
+    color: #009970; /* Verde al pasar mouse */
+}
+
+.footer-copy {
+    color: rgba(255, 255, 255, 0.75); /* Texto blanco suave */
+    text-align: center; /* Centra copyright */
+    padding-top: 12px; /* Espacio arriba */
+}
+
+.footer-copy p {
+    margin: 0; /* Quita margen del párrafo */
+    font-size: 13px; /* Tamaño pequeño */
+}
+
+/* ============================= FOOTER RESPONSIVE ============================= */
+
+@media (max-width: 768px) {
+    .footer-main {
+        display: none;
+    }
+    .footer-copy {
+        padding: 0;
+        margin: 0;
+    }
+}

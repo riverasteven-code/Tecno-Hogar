@@ -1,4 +1,8 @@
 /* ====================== CARRUCEL ====================== */
+.main-carrusel {
+    margin-top: 60px;
+}
+
 .carousel-item img{
     width: 100%;    /* Ocupa todo el ancho */
     height: 380px;  /* Altura fija pc */
@@ -12,141 +16,113 @@
     }
 }
 
-.categories-title {
+/* ====================== CATEGORIAS ====================== */
+.categories-title, .promos {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-top: 30px;
+    font-weight: bold;
+}
+
+.container-categ {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    text-align: center; 
+    flex-wrap: wrap;
+}
+
+.categ-card {
+    width: calc(13% - 40px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.10);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.categ-card:hover {
+    transform: translateY(-5px);
+}
+
+.categ-icon {
+    font-size: 50px;
     padding: 10px;
 }
 
-.categories {
-    display: flex;           /* Pone las cards una al lado de la otra */
-    justify-content: center; /* Centra todas las cards */
-    gap: 30px;               /* Espacio entre cards */
-    flex-wrap: wrap;         /* Permite que bajen en móvil */
-    cursor: pointer;
-}
-
-.category-card {
-    width: 150px;  /* Ancho de la card */
-    height: 130px; /* Alto de la card */
-    text-align: center; /*Centrar todo*/
-    border-radius: 10px; /* Borde redondeado */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /*Sombra del recuadro*/
-    transition: 0.25s;
-}
-
-.category-card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.10);        
-}
-
-.category-icon {
-    display: inline-flex; /* El círculo solo rodea el icono */
-    align-items: center; /* Centra verticalmente el icono */
-    justify-content: center; /* Centra horizontalmente */
-    font-size: 50px;
-    margin-top: 10px;
-    background-color: #f3f3f3;
-    border-radius: 50%;
-    padding: 12px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.category-name {
+.categ-name {
     font-size: 16px;
-    font-style: normal;
-    margin-top: 15px;
-    font-weight: 400;
+    padding-bottom: 10px;
 }
+
 
 /* ====================== CARD PROMOS ====================== */
-
-.promos {
-    text-align: center;
-    margin-top: 25px;
-    padding: 10px;
-}
-
-.promos-icon {
-    color: #009970;
-}
-
 .ofertas {
-    display: flex;           /* activamos flexbox */
-    justify-content: center; /* Centra las cards */
-    gap: 20px;               /* Espacio entre cards */
-    margin-top: 20px;
-    margin-bottom: 25px;
-    cursor: pointer;
-    flex-wrap: wrap;        /* Permite que bajen a otra línea */
-}
-
-.card-body {
     display: flex;
-    flex-direction: column; /* Ordena título, precios y botón en columna */
-    flex-grow: 1; /* Hace que el cuerpo ocupe el espacio disponible */
-}
-
-.card-img-top {
-    height: 170px;
-    object-fit: contain; /* No deforma la imagen */
-    padding: 15px;
-}
-
-.card-title {
-    font-size: 16px;
-    text-align: center;  /* centrar texto */
-    margin-bottom: 15px;
-}
-
-.card-ul {
-    display: flex; 
-    list-style: none;
-    gap: 10px;
-    padding-left: 0;
-    margin-top: auto;
-}
-
-.old-price {
-    text-decoration: line-through; /* Tacha el precio anterior */
-    color: #777;
-    font-size: 13px;
-}
-
-.new-price {
-    color: rgb(255, 42, 0);
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.ofertas-btn {
-    margin-top: auto;
-    background-color: #009970;
-    border: none;
-}
-
-.ofertas-btn:hover {
-    background-color: #007a5e;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px;
 }
 
 .product-card {
-    transition: 0.25s;
+    display: flex;
+    width: calc(20% - 40px);
+    /*flex-wrap: wrap;*/
 }
 
-.product-card:hover {
-    transform: translateY(-5px); /* Sube ligeramente la card */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.10); /* Sombra más premium */
+.card-img-top {
+    height: 130px;
+    object-fit: contain;
+    padding: 5px 5px 0px 5px;
+    margin-bottom: 10px;
 }
 
-@media (max-width: 768px) {
-    .product-card {
-        width: 90%;
-    }
+.card-title {
+    font-weight: 600;
+    font-size: 14px !important ;  
+    padding-bottom: 0;
+    min-height: 32px;
+}
+
+.card-ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.old-price {
+    color: gray;
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+.new-price {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ofertas-btn {
+    width: 100%;
+    background-color: #009970;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+}
+
+.ofertas-btn:hover {
+    background-color: #017b5b;
 }
 
 /* ====================== CARD DESTACADOS ====================== */
+.card-price {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    align-self: center;
+}
+
 .desta-price {
+    font-weight: bold;
     font-size: 20px;
-    font-weight: 500;
 }
