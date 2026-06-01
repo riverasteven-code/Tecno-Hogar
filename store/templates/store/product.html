@@ -187,18 +187,29 @@
     <h4 class="related-title">Productos relacionados</h4>
 
     <div class="related-products">
+        
+        {% for relacionado in productos_relacionados %}
+            <div class="card related-card">
 
-        <div class="card related-card">
-            <img src="{% static 'img/Destacados/1.png' %}" class="related-img" alt="">
-            <div class="card-body">
-                <h5 class="related-card-title">{{producto.nombre }}</h5>
-                <ul class="related-price-list">
-                    <li class="old-price-1">{{ producto.precio_anterior|floatformat:0|intcomma }}</li>
-                    <li class="new-price-1">{{ producto.precio|floatformat:0|intcomma }}</li>
-                </ul>
-                <a href="{% url 'car' %}" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+                {% if relacionado.imagen %}
+                    <img src="{{ relacionado.imagen.url }}" class="related-img" alt="{{ relacionado.nombre }}">
+                {% endif %}
+
+                <div class="card-body">
+                    <h5 class="related-card-title">{{ relacionado.nombre }}</h5>
+
+                    <ul class="related-price-list">
+                        {% if relacionado.precio_anterior %}
+                            <li class="old-price-1">$ {{ relacionado.precio_anterior|floatformat:0|intcomma }}</li>
+                        {% endif %}
+
+                        <li class="new-price-1">$ {{ relacionado.precio|floatformat:0|intcomma }}</li>
+                    </ul>
+
+                    <a href="{{ relacionado.get_absolute_url }}" class="btn btn-primary ofertas-btn">Ver detalle</a>
+                </div>
             </div>
-        </div>
+        {% endfor %}
 
     </div>
 </section>

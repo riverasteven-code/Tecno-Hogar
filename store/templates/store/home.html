@@ -142,23 +142,25 @@
   <section class="ofertas">
     {% for producto in productos %}
       {% if producto.destacado %}
-        <div class="card product-card" >
+        <a href="{{ producto.get_absolute_url }}" class="product-link">
+          <div class="card product-card" >
 
-          {% if producto.imagen %}
-            <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}">
-          {% endif %}
+            {% if producto.imagen %}
+              <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}">
+            {% endif %}
 
-          <div class="card-body">
-            <h5 class="card-title">{{ producto.nombre }}</h5>
-          
-            <ul class="card-price">
-              <li class="desta-price">$ {{ producto.precio|floatformat:0|intcomma }}</li>
-            </ul>
-          
-            <a href="{% url 'car' %}" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+            <div class="card-body">
+              <h5 class="card-title">{{ producto.nombre }}</h5>
+            
+              <ul class="card-price">
+                <li class="desta-price">$ {{ producto.precio|floatformat:0|intcomma }}</li>
+              </ul>
+            
+              <a href="{% url 'car' %}" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+            </div>
+            
           </div>
-
-        </div>
+        </a>
       {% endif %}
     {% endfor %}
   </section>

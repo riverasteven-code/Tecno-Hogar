@@ -8,7 +8,17 @@ def home(request):
 
 def product_detail(request, slug):
     producto = get_object_or_404(Producto, slug = slug, disponible = True)
-    contexto = {'producto': producto}
+
+    productos_relacionados = Producto.objects.filter (
+        categoria = producto.categoria,
+        disponible = True
+    ).exclude (id = producto.id)[:6]
+
+    contexto = {
+        'producto': producto,
+        'productos_relacionados' : productos_relacionados
+    }
+
     return render(request, 'store/product.html', contexto)
 
 def product(request):
