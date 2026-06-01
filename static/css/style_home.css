@@ -17,6 +17,12 @@
 }
 
 /* ====================== CATEGORIAS ====================== */
+.categ-link{
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
 .categories-title, .promos {
     text-align: center;
     padding-top: 30px;
@@ -55,6 +61,12 @@
 
 
 /* ====================== CARD PROMOS ====================== */
+.product-link{
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
 .ofertas {
     display: flex;
     justify-content: center;

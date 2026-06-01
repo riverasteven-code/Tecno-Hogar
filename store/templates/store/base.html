@@ -36,7 +36,7 @@
         <div class="container-fluid">
 
             <!-- ========== LOGO ========== -->
-            <a class="navbar-brand" href="#">Tecno <span class="brand-highlight">Hogar</span></a>
+            <a class="navbar-brand" href="{% url 'home' %}">Tecno <span class="brand-highlight">Hogar</span></a>
 
              <!-- BUSCADOR EN TABLET -->
             <form class="d-none d-md-flex d-lg-none me-auto" role="search">
@@ -58,11 +58,11 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown">Categorías</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Laptops</a></li>
-                            <li><a class="dropdown-item" href="#">Monitores</a></li>
-                            <li><a class="dropdown-item" href="#">Periféricos</a></li>
-                            <li><a class="dropdown-item" href="#">Audio</a></li>
-                            <li><a class="dropdown-item" href="#">Tablets</a></li>
+                            <li><a class="dropdown-item" href="{% url 'categorias' %}">Laptops</a></li>
+                            <li><a class="dropdown-item" href="{% url 'categorias' %}">Monitores</a></li>
+                            <li><a class="dropdown-item" href="{% url 'categorias' %}">Periféricos</a></li>
+                            <li><a class="dropdown-item" href="{% url 'categorias' %}">Audio</a></li>
+                            <li><a class="dropdown-item" href="{% url 'categorias' %}">Tablets</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -77,9 +77,9 @@
 
                 <!-- ========== SECCIÓN CREAR CUENTA / INICIAR SESIÓN / CARRITO ========== -->
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Crear cuenta</a></li>
-                    <li class="nav-item"><a class="nav-link login-button" href="#">Iniciar sesión</a></li>
-                    <li class="nav-item"><a class="nav-link cart-icon" href="#"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Crear cuenta</a></li>
+                    <li class="nav-item"><a class="nav-link login-button" href="{% url 'login' %}">Iniciar sesión</a></li>
+                    <li class="nav-item"><a class="nav-link cart-icon" href="{% url 'car' %}"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
                 </ul>
             </div>
 
@@ -98,13 +98,15 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Categorías</a>
                         <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Laptops</a></li>
-                        <li><a class="dropdown-item" href="#">Monitores</a></li>
-                        <li><a class="dropdown-item" href="#">Periféricos</a></li>
+                        <li><a class="dropdown-item" href="{% url 'categorias' %}">Laptops</a></li>
+                        <li><a class="dropdown-item" href="{% url 'categorias' %}">Monitores</a></li>
+                        <li><a class="dropdown-item" href="{% url 'categorias' %}">Periféricos</a></li>
+                        <li><a class="dropdown-item" href="{% url 'categorias' %}">Audio</a></li>
+                        <li><a class="dropdown-item" href="{% url 'categorias' %}">Tablets</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#">Crear cuenta</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Iniciar sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Crear cuenta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Iniciar sesión</a></li>
                     </ul>
                 </div>
             </div>

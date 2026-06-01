@@ -9,6 +9,26 @@ class CategoriaAdmin(admin.ModelAdmin):
 @admin.register(Producto)
 class ProductoAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('nombre',)}
-    list_display =('nombre', 'categoria', 'stock', 'disponible')
-    list_filter = ('categoria', 'disponible')
-    search_fields = ('nombre',)
+    list_display = (
+        'nombre', 
+        'marca',
+        'categoria',
+        'precio',
+        'precio_anterior', 
+        'stock', 
+        'disponible',
+        'destacado',
+        'oferta',
+    )
+    list_filter = (
+        'categoria', 
+        'marca',
+        'disponible',
+        'destacado',
+        'oferta',
+    )
+    search_fields = (
+        'nombre',
+        'marca',
+        'descripcion_corta',
+    )

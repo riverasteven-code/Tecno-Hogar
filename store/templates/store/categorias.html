@@ -1,5 +1,6 @@
 {% extends 'store/base.html' %}
 {% load static %} <!-- Permite usar archivos estáticos IMG, JS, CSS-->
+{% load humanize %}
 {% block title %}Categorias - TecnoHogar{% endblock %}
 {% block content %}
 
@@ -7,8 +8,8 @@
 
     <nav class="product-breadcrumb" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'categorias' %}">Categorias</a></li>
             <li class="breadcrumb-item active" aria-current="page">Laptop</li>
         </ol>
     </nav>
@@ -227,237 +228,29 @@
                 </div>
 
                 <section class="main-category-card">
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-                    
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
-                    <div class="category-card">
-                        <img src="{% static 'img/Destacados/1.png' %}" class="category-img" alt="">
-                    
-                        <div class="card-body">
-                            <p class="category-brand">Marca</p>
-                            <h5 class="category-name">MacBook Air M2 13"</h5>
-                            <p class="category-specs">Intel core i5 · 8GB RAM · 512GB SSD</p>
-                            <ul class="category-price-list ">
-                                <li class="category-old-price">$ 4.500.000</li>
-                                <li class="category-new-price">$ 4.000.000</li>
-                            </ul>
-                            <p class="category-rating">⭐⭐⭐⭐⭐</p>
-                            <div class="category-buttons">
-                                <a href="#" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
-                                <a href="#" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
-                            </div>
-                            </div>
-                    </div>
-
+                    {% for producto in productos %}
+                        <div class="category-card">
+                            {% if producto.imagen %}
+                                <img src="{{ producto.imagen.url }}" class="category-img" alt="">
+                            {% endif %}
+                            <div class="card-body">
+                                <p class="category-brand">{{ producto.marca}}</p>
+                                <h5 class="category-name">{{ producto.nombre}}</h5>
+                                <p class="category-specs">{{ producto.descripcion_corta}}</p>
+                                <ul class="category-price-list ">
+                                    <li class="category-old-price">{{ producto.precio_anterior|floatformat:0|intcomma }}</li>
+                                    <li class="category-new-price">{{ producto.precio|floatformat:0|intcomma }}</li>
+                                </ul>
+                                <p class="category-rating">⭐ {{ producto.rating }}</p>
+                                <div class="category-buttons">
+                                    <a href="{% url 'car' %}" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                    <a href="{{ producto.get_absolute_url }}" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
+                                </div>
+                                </div>
+                        </div>
+                    {% endfor %}
                 </section>
                 
-
             </section>
         </div>
 

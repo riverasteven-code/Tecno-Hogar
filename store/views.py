@@ -1,10 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Producto
 
 def home(request):
     productos = Producto.objects.filter(disponible=True)
     contexto = {'productos': productos}
     return render(request, 'store/home.html', contexto)
+
+def product_detail(request, slug):
+    producto = get_object_or_404(Producto, slug = slug, disponible = True)
+    contexto = {'producto': producto}
+    return render(request, 'store/product.html', contexto)
 
 def product(request):
     return render(request, 'store/product.html')
@@ -19,4 +24,9 @@ def register(request):
     return render(request, 'store/register.html')
 
 def categorias(request):
-    return render(request, 'store/categorias.html')
+    productos = Producto.objects.filter(disponible=True)
+    contexto = {'productos': productos}
+    return render(request, 'store/categorias.html', contexto)
+
+
+

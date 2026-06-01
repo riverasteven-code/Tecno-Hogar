@@ -1,5 +1,6 @@
 {% extends 'store/base.html' %}
 {% load static %} <!-- Permite usar archivos estáticos IMG, JS, CSS-->
+{% load humanize %}
 {% block title %}Inicio - TecnoHogar{% endblock %}
 {% block content %}
 
@@ -35,48 +36,66 @@
 
   <section class="container-categ">
 
-    <div class="card categ-card">
-      <i class="bi bi-laptop categ-icon"></i>
-      <div class="categ-body">
-        <h5 class="categ-name">Laptops</h5>
+    <a href="{% url 'categorias' %}" class="categ-link">
+      <div class="card categ-card">
+        <i class="bi bi-laptop categ-icon"></i>
+        <div class="categ-body">
+          <h5 class="categ-name">Laptops</h5>
+        </div>
       </div>
-    </div>
+    </a>
 
-    <div class="card categ-card">
-      <i class="bi bi-laptop categ-icon"></i>
-      <div class="categ-body">
-        <h5 class="categ-name">Monitores</h5>
+    <a href="{% url 'categorias' %}" class="categ-link">
+      <div class="card categ-card">
+        <i class="bi bi-laptop categ-icon"></i>
+        <div class="categ-body">
+          <h5 class="categ-name">Monitores</h5>
+        </div>
       </div>
-    </div>
+    </a>
+    
 
-    <div class="card categ-card">
-      <i class="bi bi-keyboard categ-icon"></i>
-      <div class="categ-body">
-        <h5 class="categ-name">Perifericos</h5>
+    <a href="{% url 'categorias' %}" class="categ-link">
+      <div class="card categ-card">
+        <i class="bi bi-keyboard categ-icon"></i>
+        <div class="categ-body">
+          <h5 class="categ-name">Perifericos</h5>
+        </div>
       </div>
-    </div>
+    </a>
+    
 
-    <div class="card categ-card">
-      <i class="bi bi-headphones categ-icon"></i>
-      <div class="categ-body">
-        <h5 class="categ-name">Audio</h5>
+
+    <a href="{% url 'categorias' %}" class="categ-link">
+      <div class="card categ-card">
+        <i class="bi bi-headphones categ-icon"></i>
+        <div class="categ-body">
+          <h5 class="categ-name">Audio</h5>
+        </div>
       </div>
-    </div>
+    </a>
+    
 
-    <div class="card categ-card">
-      <i class="bi bi-tablet categ-icon"></i>
-      <div class="categ-body">
-        <h5 class="categ-name">Tablets</h5>
+
+    <a href="{% url 'categorias' %}" class="categ-link">
+      <div class="card categ-card">
+        <i class="bi bi-tablet categ-icon"></i>
+        <div class="categ-body">
+          <h5 class="categ-name">Tablets</h5>
+        </div>
       </div>
-    </div>
+    </a>
+    
 
-    <div class="card categ-card">
-      <i class="bi bi-cpu categ-icon"></i>
-      <div class="categ-body">
-        <h5 class="categ-name">Componentes</h5>
+
+    <a href="{% url 'categorias' %}" class="categ-link">
+      <div class="card categ-card">
+        <i class="bi bi-cpu categ-icon"></i>
+        <div class="categ-body">
+          <h5 class="categ-name">Componentes</h5>
+        </div>
       </div>
-    </div>
-
+    </a>
   </section>
 
   <!-- ==================== CARD PROMOS ==================== -->
@@ -87,59 +106,33 @@
   </h4>
 
   <section class="ofertas">
-
-    <div class="card product-card">
-    <img src="{% static 'img/promos/1.png' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Portatil Asus X1502va-nj942</h5>
-
-
-        <ul class="card-ul">
-          <li class="old-price">$ 2.399.000</li>
-          <li class="new-price">$ 2.129.900</li>
-        </ul>
-
-
-        <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
-      </div>
-    </div>
-
-    <div class="card product-card">
-    <img src="{% static 'img/promos/2.png' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Monitor Gamer LG UltraGearTM 27" FHD IPS </h5>
-        <ul class="card-ul">
-          <li class="old-price">$ 1.599.00</li>
-          <li class="new-price">$ 729.900</li>
-        </ul>
-        <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
-      </div>
-    </div>
-
-    <div class="card product-card">
-    <img src="{% static 'img/promos/3.png' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Sony WH-1000XM5</h5>
-        <ul class="card-ul">
-          <li class="old-price">$ 1.200.00</li>
-          <li class="new-price">$ 999.900</li>
-        </ul>
-        <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
-      </div>
-    </div>
-
-    <div class="card product-card" >
-    <img src="{% static 'img/promos/4.png' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Logitec G Pro X TKL Lightspeed White</h5>
-        <ul class="card-ul">
-          <li class="old-price">$ 908.000</li>
-          <li class="new-price">$ 659.900</li>
-        </ul>
-        <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
-      </div>
-    </div>
-
+    {% for producto in productos %}
+    {% if producto.oferta %}
+      <a href="{{ producto.get_absolute_url }}" class="product-link">
+        <div class="card product-card">
+        
+          {% if producto.imagen %}
+          <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}">
+          {% endif %}
+        
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+        
+            <ul class="card-ul">
+              {% if producto.precio_anterior %}
+              <li class="old-price">$ {{ producto.precio_anterior|floatformat:0|intcomma }}</li>
+              {% endif %}
+        
+              <li class="new-price">$ {{ producto.precio|floatformat:0|intcomma }}</li>
+            </ul>
+        
+            <a href="{% url 'car' %}" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+          </div>
+        
+        </div>
+      </a>
+    {% endif %}
+    {% endfor %}
   </section>
 
   <!-- ==================== CARD DESTACADOS ==================== -->
@@ -147,51 +140,27 @@
   <h4 class="promos">Productos destacados</h4>
 
   <section class="ofertas">
+    {% for producto in productos %}
+      {% if producto.destacado %}
+        <div class="card product-card" >
 
-    <div class="card product-card" >
-    <img src="{% static 'img/Destacados/1.png' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">MacBook Air M2 13"</h5>
-        <ul class="card-price">
-          <li class="desta-price">$ 4.000.000</li>
-        </ul>
-        <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
-      </div>
-    </div>
+          {% if producto.imagen %}
+            <img src="{{ producto.imagen.url }}" class="card-img-top" alt="{{ producto.nombre }}">
+          {% endif %}
 
-    <div class="card product-card">
-    <img src="{% static 'img/Destacados/2.png' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Dell ultraSharp 27" 4k</h5>
-        <ul class="card-price">
-          <li class="desta-price">$ 3.714.978</li>
-        </ul>
-        <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
-      </div>
-    </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+          
+            <ul class="card-price">
+              <li class="desta-price">$ {{ producto.precio|floatformat:0|intcomma }}</li>
+            </ul>
+          
+            <a href="{% url 'car' %}" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+          </div>
 
-    <div class="card product-card">
-    <img src="{% static 'img/Destacados/3.png' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Logitech MX Master 3S</h5>
-        <ul class="card-price">
-          <li class="desta-price">$ 410.141</li>
-        </ul>
-        <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
-      </div>
-    </div>
-
-    <div class="card product-card">
-    <img src="{% static 'img/Destacados/4.png' %}" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Corsair 4000D Airflow</h5>
-        <ul class="card-price">
-          <li class="desta-price">$ 640.000</li>
-        </ul>
-        <a href="#" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
-      </div>
-    </div>
-
+        </div>
+      {% endif %}
+    {% endfor %}
   </section>
 
 
