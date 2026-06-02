@@ -21,59 +21,71 @@
 
                 <a class="navbar-brand" href="#">Tecno <span class="brand-highlight">Hogar</span></a>
 
+                
                 <h2 class="register-title">Crear cuenta</h2>
                 <p class="register-subtitle">Registrate y empieza a comprar tecnología</p>
 
-                <div class="register-nombre">
-                    <p>Nombre completo</p>
-                    <div class="input-box-register">
-                        <i class="bi bi-person input-icon-register"></i>
-                        <input type="text" placeholder="Steven Rivera">
+                {% if messages %}
+                    {% for message in messages %}
+                        <p class="register-error">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+
+                <form method="POST">
+                    {% csrf_token %}
+                
+                    <div class="register-nombre">
+                        <p>Nombre completo</p>
+                        <div class="input-box-register">
+                            <i class="bi bi-person input-icon-register"></i>
+                            <input type="text" name="nombre" placeholder="Steven Rivera">
+                        </div>
                     </div>
-                </div>
 
-                <div class="register-correo">
-                    <p>Correo electrónico</p>
-                    <div class="input-box-register">
-                        <i class="bi bi-envelope input-icon-register"></i>
-                        <input type="email" placeholder="tu@email.com">
+                    <div class="register-correo">
+                        <p>Correo electrónico</p>
+                        <div class="input-box-register">
+                            <i class="bi bi-envelope input-icon-register"></i>
+                            <input type="email" name="email" placeholder="tu@email.com">
+                        </div>
                     </div>
-                </div>
 
-                <div class="login-password">
-                    <p>Contraseña</p>
-                    <div class="input-box-register">
-                        <i class="bi bi-lock input-icon-register"></i>
-                        <input type="password" placeholder="********">
-                        <i class="bi bi-eye-slash input-eye"></i>
-                    </div> 
-                </div>
-
-
-                <div class="login-password">
-                    <p>Confirmar contraseña</p>
-                    <div class="input-box-register">
-                        <i class="bi bi-lock input-icon-register"></i>
-                        <input type="password" placeholder="********">
-                        <i class="bi bi-eye-slash input-eye"></i>
-                    </div> 
-                </div>
-
-
-                <div class="register-box">
-                    <div>
-                        <input class="box" type="checkbox" id="remember" >
-                        <label for="remember">Acepto los términos y condiciones </label>
+                    <div class="login-password">
+                        <p>Contraseña</p>
+                        <div class="input-box-register">
+                            <i class="bi bi-lock input-icon-register"></i>
+                            <input type="password" name="password1" placeholder="********">
+                            <i class="bi bi-eye-slash input-eye"></i>
+                        </div> 
                     </div>
-                </div>
 
-                <div class="register-btn">
-                    <button class="btn-1">Crear cuenta</button>
-                    <p> o regístrate con</p>
-                    <button class="btn-google">
-                        <img class="icon-google" src="{% static 'img/Icon/icon-google.png' %}" alt="">
-                    Continuar con Google</button>
-                </div>
+
+                    <div class="login-password">
+                        <p>Confirmar contraseña</p>
+                        <div class="input-box-register">
+                            <i class="bi bi-lock input-icon-register"></i>
+                            <input type="password" name="password2" placeholder="********">
+                            <i class="bi bi-eye-slash input-eye"></i>
+                        </div> 
+                    </div>
+
+
+                    <div class="register-box">
+                        <div>
+                            <input class="box" type="checkbox" id="remember" >
+                            <label for="remember">Acepto los términos y condiciones </label>
+                        </div>
+                    </div>
+
+                    <div class="register-btn">
+                        <button type="submit" class="btn-1">Crear cuenta</button>
+                        <p> o regístrate con</p>
+                        <button type="button" class="btn-google">
+                            <img class="icon-google" src="{% static 'img/Icon/icon-google.png' %}" alt="">
+                        Continuar con Google</button>
+                    </div>
+
+                </form>
 
                 <div class="register-register">
                     <p>¿Ya tienes cuenta?</p>

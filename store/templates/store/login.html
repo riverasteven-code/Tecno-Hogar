@@ -24,39 +24,42 @@
                 <h2 class="login-title">Iniciar sesión</h2>
                 <p class="login-subtitle">Accede a tu cuenta para continuar comprando</p>
 
-                <div class="login-correo">
-                    <p>Correo electrónico</p>
-                    <div class="input-box">
-                        <i class="bi bi-envelope input-icon"></i>
-                        <input type="email" placeholder="tu@email.com">
-                    </div>
-                </div>
-
-                <div class="login-password">
-                    <p>Contraseña</p>
-                    <div class="input-box">
-                        <i class="bi bi-lock input-icon"></i>
-                        <input type="password" placeholder="********">
-                        <i class="bi bi-eye-slash input-eye"></i>
-                    </div> 
-                </div>
-
-                <div class="login-box">
-                    <div>
-                        <input class="box" type="checkbox" id="remember" checked|>
-                        <label for="remember">Recordarme</label>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="login-correo">
+                        <p>Correo electrónico</p>
+                        <div class="input-box">
+                            <i class="bi bi-envelope input-icon"></i>
+                            <input type="email" name="email" placeholder="tu@email.com">
+                        </div>
                     </div>
 
-                    <p>¿Olvidaste tu contraseña?</p>
-                </div>
+                    <div class="login-password">
+                        <p>Contraseña</p>
+                        <div class="input-box">
+                            <i class="bi bi-lock input-icon"></i>
+                            <input type="password" name="password1" placeholder="********">
+                            <i class="bi bi-eye-slash input-eye"></i>
+                        </div> 
+                    </div>
 
-                <div class="login-btn">
-                    <button class="btn-1">Iniciar sesión</button>
-                    <p> o continúa con</p>
-                    <button class="btn-google">
-                        <img class="icon-google" src="{% static 'img/Icon/icon-google.png' %}" alt="">
-                    Continuar con Google</button>
-                </div>
+                    <div class="login-box">
+                        <div>
+                            <input class="box" type="checkbox" id="remember" checked|>
+                            <label for="remember">Recordarme</label>
+                        </div>
+
+                        <p>¿Olvidaste tu contraseña?</p>
+                    </div>
+
+                    <div class="login-btn">
+                        <button type="submit" class="btn-1">Iniciar sesión</button>
+                        <p> o continúa con</p>
+                        <button class="btn-google">
+                            <img class="icon-google" src="{% static 'img/Icon/icon-google.png' %}" alt="">
+                        Continuar con Google</button>
+                    </div>
+                </form>
 
                 <div class="login-register">
                     <p>¿No tienes cuenta?</p>

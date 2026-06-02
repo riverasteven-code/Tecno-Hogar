@@ -1,5 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Producto, Carrito, ItemCarrito
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login as auth_login
+from django.contrib.auth import logout
+from django.contrib import messages
 
 def home(request):
     productos = Producto.objects.filter(disponible=True)
@@ -53,9 +57,48 @@ def agregar_carrito(request, producto_id):
     return redirect('car')
 
 def login(request):
+
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password1 = request.POST.get('password1') 
+
+        usuario =  authenticate(request, username=email, password=password1)
+
+        if usuario is not None:
+            auth_login(request, usuario)
+            return redirect('home')
+
+
     return render(request, 'store/login.html')
 
 def register(request):
+
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        email = request.POST.get('email')
+        password1 = request.POST.get('password1')
+        password2 = request.POST.get('password2')
+
+        if User.objects.filter(username = email).exists():
+            messages.error(request, 'Este correo ya está registrado')
+            return redirect('register')
+
+        if password1 != password2:
+            messages.error(request, 'Las contraseñas no coinciden')
+            return redirect('register')
+        
+        usuario = User.objects.create_user(
+            username=email,
+            email=email,
+            password=password1,
+            first_name=nombre
+        )
+
+        usuario.save()
+        return redirect('login')
+    
+    
+
     return render(request, 'store/register.html')
 
 def categorias(request):
@@ -86,5 +129,9 @@ def disminuir_cantidad(request, item_id):
 
     return redirect( 'car' )
 
+
+def logout_user(request):
+    logout(request)
+    return redirect('home')
 
 
