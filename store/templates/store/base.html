@@ -79,7 +79,10 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Crear cuenta</a></li>
                     <li class="nav-item"><a class="nav-link login-button" href="{% url 'login' %}">Iniciar sesión</a></li>
-                    <li class="nav-item"><a class="nav-link cart-icon" href="{% url 'car' %}"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a></li>
+                    <li class="nav-item"><a class="nav-link cart-icon" href="{% url 'car' %}">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">{{ carrito.total_items }}</span></a>
+                    </li>
                 </ul>
             </div>
 

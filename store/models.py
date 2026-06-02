@@ -47,10 +47,41 @@ class Producto(models.Model):
     destacado = models.BooleanField(default=False)
     oferta = models.BooleanField(default=False)
     fecha_creacion = models.DateTimeField(auto_now_add=True)
-    
 
     def __str__(self):
         return self.nombre
 
     def get_absolute_url(self):
         return reverse('producto_detalle', args=[self.slug])
+    
+class Carrito(models.Model): 
+    creado = models.DateTimeField (auto_now_add = True)
+
+    def total(self):
+        return sum(item.subtotal() for item in self.items.all())
+    
+    def descuento(self):
+        total_descuento = 0
+
+        for item in self.items.all():
+            if item.producto.precio_anterior:
+                total_descuento += (item.producto.precio_anterior - item.producto.precio) * item.cantidad
+
+        return total_descuento
+    
+    def total_items(self):
+        return sum(item.cantidad for item in self.items.all())
+
+    def __str__ (self):
+        return f"Carrito {self.id}"    
+
+class ItemCarrito  (models.Model):
+    carrito = models.ForeignKey (Carrito, on_delete = models.CASCADE, related_name = 'items')
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad = models.PositiveBigIntegerField (default = 1)
+
+    def subtotal(self):
+        return self.producto.precio * self.cantidad
+
+    def __str__(self):
+        return f"{self.cantidad} x {self.producto.nombre}"

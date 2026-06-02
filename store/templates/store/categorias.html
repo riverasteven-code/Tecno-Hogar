@@ -243,7 +243,7 @@
                                 </ul>
                                 <p class="category-rating">⭐ {{ producto.rating }}</p>
                                 <div class="category-buttons">
-                                    <a href="{% url 'car' %}" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
+                                    <a href="{% url 'agregar_carrito' producto.id %}" class="category-cart-btn btn btn-primary">Agregar <i class="bi bi-cart"></i></a>
                                     <a href="{{ producto.get_absolute_url }}" class="category-detail-link">Ver detalle <i class="bi bi-arrow-right-short"></i></a>                       
                                 </div>
                                 </div>

@@ -126,7 +126,7 @@
               <li class="new-price">$ {{ producto.precio|floatformat:0|intcomma }}</li>
             </ul>
         
-            <a href="{% url 'car' %}" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+            <a href="{% url 'agregar_carrito' producto.id %}" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
           </div>
         
         </div>
@@ -156,7 +156,7 @@
                 <li class="desta-price">$ {{ producto.precio|floatformat:0|intcomma }}</li>
               </ul>
             
-              <a href="{% url 'car' %}" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
+              <a href="{% url 'agregar_carrito' producto.id %}" class="btn btn-primary ofertas-btn">Agregar al carrito</a>
             </div>
             
           </div>

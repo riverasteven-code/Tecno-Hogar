@@ -1,5 +1,6 @@
 {% extends 'store/base.html' %}
 {% load static %} <!-- Permite usar archivos estáticos IMG, JS, CSS-->
+{% load humanize %}
 {% block title %}Carro de compras - TecnoHogar{% endblock %}
 {% block content %}
 
@@ -22,155 +23,64 @@
         </div>
 
         <section class="container-car">
-            <!-- Producto 1 del carrito -->
-            <div class="card mb-3 cart-card">
+            {% for item in items %}
+                <!-- Producto 1 del carrito -->
+                <div class="card mb-3 cart-card">
 
-                <div class="row g-0 align-items-center cart-row">
-
-                    <div class="col-md-2">
-                        <img src="{% static 'img/Miniaturas/Laptop/min1.png' %}" class="img-fluid rounded-start cart-img" alt="...">
-                    </div>
-
-                    <!-- Información producto -->
-                    <div class="col-md-4"> 
-                        <div class="card-body">
-                            <h5 class="card-title">Portátil Asus X1502VA</h5>
-                            <p class="card-text">ASUS · Laptop</p>
-                            <p class="card-text">
-                                <small class="text-body-secondary">El Portátil Asus X1502VA Con procesador Intel Core i5,
-                                    16GB de RAM y almacenamiento SSD de 1TB.
-                                </small>
-                            </p>
+                    <div class="row g-0 align-items-center cart-row">
+                        
+                        <div class="col-md-2">
+                            {% if item.producto.imagen %}
+                                <img src="{{ item.producto.imagen.url }}" class="img-fluid rounded-start cart-img" alt="{{ item.producto.nombre }}">
+                            {% endif %}
                         </div>
-                    </div> 
 
-                    <!-- Precio, cantidad, subtotal, eliminar -->
-                    <div class="col-md-6">
-                        <div class="cart-number">
-
-                            <!-- Parte 2: precio unitario -->
-                            <p class="cart-price">$ 2.129.900</p>
-                    
-                            <!-- Parte 3: cantidad -->
-                            <div class="cart-quantity">
-                                <!--<button>-</button>-->
-                                <i class="bi bi-dash"></i>
-                                <span> 1 </span>
-                                <i class="bi bi-plus-lg"></i>
-                                <!--<button>+</button>-->
+                        <!-- Información producto -->
+                        <div class="col-md-4"> 
+                            <div class="card-body">
+                                <h5 class="card-title">{{ item.producto.nombre }}</h5>
+                                <p class="card-text">{{ item.producto.marca }} · {{ item.producto.categoria.nombre }}</p>
+                                <p class="card-text">
+                                    <small class="text-body-secondary"> 
+                                        {{ item.producto.descripcion_corta }} 
+                                    </small>
+                                </p>
                             </div>
-                    
-                            <!-- Parte 4: subtotal -->
-                            <p class="cart-subtotal">$ 2.129.900</p>
+                        </div> 
 
-                            <!-- Parte 5: basura -->
-                            <i class="bi bi-trash"></i>
+                        <!-- Precio, cantidad, subtotal, eliminar -->
+                        <div class="col-md-6">
+                            <div class="cart-number">
 
-                        </div>
-                    </div>
-                </div>
+                                <!-- Parte 2: precio unitario -->
+                                <p class="cart-price">{{ item.producto.precio|floatformat:0|intcomma }}</p>
+                        
+                                <!-- Parte 3: cantidad -->
+                                <div class="cart-quantity">
+                                    <!--<button>-</button>-->
+                                    <a href="{% url 'disminuir_cantidad' item.id %}">
+                                        <i class="bi bi-dash"></i>
+                                    </a>
+                                    <span> {{ item.cantidad }} </span>
+                                    <a href="{% url 'aumentar_cantidad' item.id %}">
+                                        <i class="bi bi-plus-lg"></i>
+                                    </a>
+                                    <!--<button>+</button>-->
+                                </div>
+                        
+                                <!-- Parte 4: subtotal -->
+                                <p class="cart-subtotal">{{ item.subtotal|floatformat:0|intcomma }}</p>
 
-            </div>
-
-            <!-- Producto 2 del carrito -->
-             <div class="card mb-3 cart-card">
-
-                <div class="row g-0 align-items-center cart-row">
-
-                    <div class="col-md-2">
-                        <img src="{% static 'img/Miniaturas/Monitor/min1.png' %}" class="img-fluid rounded-start cart-img" alt="...">
-                    </div>
-
-                    <!-- Información producto -->
-                    <div class="col-md-4"> 
-                        <div class="card-body">
-                            <h5 class="card-title">Monitor Gamer LG UltraGearTM 27" FHD IPS</h5>
-                            <p class="card-text">ASUS · Laptop</p>
-                            <p class="card-text">
-                                <small class="text-body-secondary">El Portátil Asus X1502VA Con procesador Intel Core i5,
-                                    16GB de RAM y almacenamiento SSD de 1TB.
-                                </small>
-                            </p>
-                        </div>
-                    </div> 
-
-                    <!-- Precio, cantidad, subtotal, eliminar -->
-                    <div class="col-md-6">
-                        <div class="cart-number">
-
-                            <!-- Parte 2: precio unitario -->
-                            <p class="cart-price">$ 729.900</p>
-                    
-                            <!-- Parte 3: cantidad -->
-                            <div class="cart-quantity">
-                                <!--<button>-</button>-->
-                                <i class="bi bi-dash"></i>
-                                <span> 1 </span>
-                                <i class="bi bi-plus-lg"></i>
-                                <!--<button>+</button>-->
+                                <!-- Parte 5: basura -->
+                                <a href="{% url 'eliminar_item_carrito' item.id %}">  
+                                    <i class="bi bi-trash"></i>
+                                </a> 
                             </div>
-                    
-                            <!-- Parte 4: subtotal -->
-                            <p class="cart-subtotal">$ 729.900</p>
-
-                            <!-- Parte 5: basura -->
-                            <i class="bi bi-trash"></i>
-
                         </div>
                     </div>
+
                 </div>
-
-            </div>
-
-            <!-- Producto 3 del carrito -->
-             <div class="card mb-3 cart-card">
-
-                <div class="row g-0 align-items-center cart-row">
-
-                    <div class="col-md-2">
-                        <img src="{% static 'img/Miniaturas/Audifonos/min1.png' %}" class="img-fluid rounded-start cart-img" alt="...">
-                    </div>
-
-                    <!-- Información producto -->
-                    <div class="col-md-4"> 
-                        <div class="card-body">
-                            <h5 class="card-title">Sony WH-1000XM5</h5>
-                            <p class="card-text">Audio</p>
-                            <p class="card-text">
-                                <small class="text-body-secondary">El Portátil Asus X1502VA Con procesador Intel Core i5,
-                                    16GB de RAM y almacenamiento SSD de 1TB.
-                                </small>
-                            </p>
-                        </div>
-                    </div> 
-
-                    <!-- Precio, cantidad, subtotal, eliminar -->
-                    <div class="col-md-6">
-                        <div class="cart-number">
-
-                            <!-- Parte 2: precio unitario -->
-                            <p class="cart-price">$ 999.900</p>
-                    
-                            <!-- Parte 3: cantidad -->
-                            <div class="cart-quantity">
-                                <!--<button>-</button>-->
-                                <i class="bi bi-dash"></i>
-                                <span> 1 </span>
-                                <i class="bi bi-plus-lg"></i>
-                                <!--<button>+</button>-->
-                            </div>
-                    
-                            <!-- Parte 4: subtotal -->
-                            <p class="cart-subtotal">$ 999.900</p>
-
-                            <!-- Parte 5: basura -->
-                            <i class="bi bi-trash"></i>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            {% endfor %}
         </section>
 
 
@@ -258,12 +168,12 @@
             <h3 class="summary-title">Resumen de compra</h3>
 
             <div class="summary-subtotal">
-                <p>Subtotal (3 productos)</p>
-                <p>$ 5.198.000</p>
+                <p>(Subtotal {{ items|length }} productos)</p>
+                <p> $ {{ carrito.total|floatformat:0|intcomma }}</p>
             </div>
             <div class="summary-descuento">
                 <p>Descuento</p>
-                <p>$ - 1.338.300</p>
+                <p>$ - {{ carrito.descuento|floatformat:0|intcomma }}</p>
             </div>
             <div class="summary-envio">
                 <p>Envio</p>
@@ -271,7 +181,7 @@
             </div>
             <div class="summary-total">
                 <p>Total a pagar</p>
-                <p class="summary-total-p" >$ 3.859.700</p>
+                <p class="summary-total-p">$ {{ carrito.total|floatformat:0|intcomma }}</p>
             </div>
 
             <input type="text" class="coupon-input" placeholder="Ingresa tu cupón de descuento">
