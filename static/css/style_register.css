@@ -45,14 +45,6 @@
     margin-bottom: 5px;
     font-size: 13px ;
 }
-/*
-.register-nombre input, .register-correo input,
-.register-celular input, .register-password input {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    width: 400px;
-}*/
 
 .register-box {
     display: flex;
@@ -154,9 +146,28 @@
     .register-img {
         display: none;
     }
-
-    .register-page {
-        padding: 25px 20px 20px 20px;
-        height: 92vh;
+    .container-r {
+        margin-top: 40px;
+    }
+    .register-container {
+        width: 90%;
+    }
+    .register-subtitle {
+        font-size: 12px;
+    }
+    .register-nombre input,
+    .register-correo input,
+    .login-password input {
+        width: 100%;
+    }
+    .register-box {
+        font-size: 12px;
+    }
+    .register-btn p {
+        font-size: 12px;
+    }
+    .btn-1,
+    .btn-google {
+        width: 100%;
     }
 }

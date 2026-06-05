@@ -138,174 +138,143 @@
 /* ===============================  CATEGORIAS CARD =============================== */
 .main-category-card {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 10px;
     flex-wrap: wrap;
+    margin-top: 20px;
+    cursor: pointer;
 }
 
-.category-card{
-    margin-top: 20px;
-    background-color: white;
+.category-link {
+  display: block;          /* que se comporte como un div */
+  text-decoration: none;   /* quita subrayado */
+  color: inherit;          /* hereda el color del texto */
+}
+
+
+.category-card {
+    width: calc(24% - 15px); /* 4 por fila */
     border: 1px solid #ddd;
     border-radius: 12px;
-    height: 100%;
-    width: calc(25% - 15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
 }
 
 .category-img {
-    height: 130px;
+    margin: 10px;
+    height: 140px;
     object-fit: contain;
-    padding: 5px 5px 0px 5px;
 }
 
 .card-body {
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .category-brand {
     color: #666;
-    font-size: 13px;
-    margin-top: -20px;
+    font-size: 12px;
 }
 
 .category-name {
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: -5px;
+    font-size: 17px;
 }
 
 .category-specs {
-    font-size: 11px;
+    font-size: 12px;
     color: #666;
-    /*margin-top: -5px;*/
 }
 
 .category-price-list {
     display: flex;
-    list-style: none;
     padding: 0;
     margin: 0;
-    gap:  30px;
+    list-style: none;
+    justify-content: space-between;
 }
 
 .category-old-price {
-    text-decoration: line-through;
     color: #666;
     font-size: 12px;
+    text-decoration: line-through;
 }
 
 .category-new-price {
     color: red;
-    /*font-size: 15px;*/
-    font-weight: 600;
-}
-
-.category-rating {
-    font-size: 14px;
+    text-align: right;
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .category-buttons {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .category-cart-btn {
     background-color: #009970;
+    width: 100%;
     border: none;
-    width: 55%;
-    font-size: 12px;
-    font-weight: 600;
+    padding: 10px;
 }
 
 .category-cart-btn:hover {
-    background-color: #047b5b;
+    background-color: #078664;
 }
 
 .category-detail-link {
-    font-size: 13px;
-    text-decoration: none;
+    margin-top: 10px;
     color: #009970;
-    font-weight: 600;
-    margin-bottom: 5px;
+    font-size: 14px;
 }
 
-.category-detail-link:hover {
-    text-decoration: underline;
-}
+/* ================================== ( Movil ) ===================================== */
+@media (max-width: 768px) {
 
-/* ===============================  CATEGORIAS CARD (Movil) =============================== */
-@media (max-width: 991px) {
     .main-category-card {
-        gap: 15px;
+        gap: 5px;
     }
     .category-card {
-        width: calc(33% - 10px); /* 2 cards por fila en tablet vertical */
+        width: calc(100% - 15px);
+        min-width: 0;
     }
-     .category-buttons {
-        display: flex;
-        flex-direction: column;
-    }
-    .category-cart-btn {
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-    .category-detail-link {
-        font-size: 16px;
-    }   
-}
-
-@media (max-width:768px) {
-    .category-card {
-        width: calc(100% - 10px);
-        margin-bottom: -15px;
-    }
-    .category-img  {
-        height: 130px;
+    .category-img {
+        height: 150px;
         object-fit: contain;
-        padding: 5px 5px 0px 5px;
+    }
+    .category-brand {
+        font-size: 11px;
+    }
+    .category-name {
+        font-size: 18px;
     }
     .category-price-list {
         display: flex;
         flex-direction: column;
     }
-    .category-new-price {
-        margin-top: -25px;
-        font-size: 20px;
+    .category-old-price {
+        color: #666;
+        font-size: 14px;
+        text-decoration: line-through;
     }
-    .category-buttons {
-        display: flex;
-        flex-direction: column;
+    .category-new-price {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .category-rating {
+        font-size: 14px;
     }
     .category-cart-btn {
         width: 100%;
         padding: 10px;
-        font-size: 16px;
         margin-bottom: 10px;
     }
 }
 
-/* ===============================  CATEGORIAS CARD (Tablet) =============================== */
-@media (min-width: 992px) {
-    #filtrosCategorias {
-        display: block;
-    }
-    .category-price-list {
-        display: flex;
-        flex-direction: column;
-    }
-    .category-new-price {
-        margin-top: -25px;
-        font-size: 20px;
-    }
-    .category-buttons {
-        display: flex;
-        flex-direction: column;
-    }
-    .category-cart-btn {
-        width: 100%;
-        padding: 10px;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-}
+
+

@@ -142,9 +142,23 @@
     .login-img {
         display: none;
     }
-
-    .login-page {
-        padding: 80px 20px 20px 20px;
-        height: 92vh;
+    .container-l {
+        margin-top: 40px;
+        width: 90%;
     }
+    .login-subtitle {
+        font-size: 12px;
+    }
+    .login-correo input,
+    .login-password input {
+        width: 100%;
+    }
+    .login-box,
+    .login-box p  {
+        padding: 8px 0 8px 0;
+    }
+    .login-btn p{
+        font-size: 13px;
+    }
+
 }

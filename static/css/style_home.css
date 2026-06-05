@@ -17,50 +17,73 @@
 }
 
 /* ====================== CATEGORIAS ====================== */
-.categ-link{
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
+.categories-title {
+    text-align: center;
+    padding: 30px;
+    color: #009970;
+    font-weight: 700;
 }
 
-.categories-title, .promos {
-    text-align: center;
-    padding-top: 30px;
-    font-weight: bold;
+.categ-link {
+    text-decoration: none;
 }
 
 .container-categ {
-    padding: 20px;
     display: flex;
+    gap: 30px;
     justify-content: center;
-    gap: 40px;
-    text-align: center; 
-    flex-wrap: wrap;
 }
 
 .categ-card {
-    width: calc(13% - 40px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.10);
-    cursor: pointer;
-    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 100px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+    transition: 0.5s;
 }
 
 .categ-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
 .categ-icon {
     font-size: 50px;
-    padding: 10px;
 }
 
 .categ-name {
-    font-size: 16px;
-    padding-bottom: 10px;
+    font-size: 15px;
+    color: #009970;
+    font-weight: 700;
 }
 
+@media (max-width: 768px) {
+    .container-categ {
+        display: flex;
+        flex-wrap: wrap;  
+        gap: 20px;
+        justify-content: center;
+    }
+    .categ-card {
+        width: 100px;
+        height: 100px;  
+    }
+    .categ-name {
+        font-size: 13px;
+        font-weight: none;
+    }
+}
 
 /* ====================== CARD PROMOS ====================== */
+.promos {
+    margin-top: 40px;
+    text-align: center;
+    color: #009970;
+    font-weight: 700;
+}
+
 .product-link{
     cursor: pointer;
     text-decoration: none;
@@ -71,27 +94,32 @@
     display: flex;
     justify-content: center;
     padding: 20px;
-    gap: 30px;
+    gap: 20px;
 }
 
 .product-card {
     display: flex;
-    width: calc(20% - 40px);
+    width: 240px;
     /*flex-wrap: wrap;*/
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
+    transition: 0.5s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
 }
 
 .card-img-top {
-    height: 130px;
+    height: 140px;
     object-fit: contain;
     padding: 5px 5px 0px 5px;
-    margin-bottom: 10px;
 }
 
 .card-title {
     font-weight: 600;
-    font-size: 14px !important ;  
+    font-size: 15px !important ;  
     padding-bottom: 0;
-    min-height: 32px;
+    min-height: 20px;
 }
 
 .card-ul {
@@ -104,12 +132,12 @@
 .old-price {
     color: gray;
     text-decoration: line-through;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .new-price {
     color: red;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -118,7 +146,7 @@
     background-color: #009970;
     cursor: pointer;
     border: none;
-    padding: 10px;
+    padding: 8px;
 }
 
 .ofertas-btn:hover {
@@ -128,13 +156,21 @@
 /* ====================== CARD DESTACADOS ====================== */
 .card-price {
     display: flex;
-    justify-content: center;
-    padding: 0;
     list-style: none;
-    align-self: center;
 }
 
 .desta-price {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
+}
+
+/* ====================== CARD Movil ====================== */
+
+@media (max-width: 768px) {
+    .ofertas {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;  
+        align-items: center;
+    }
 }

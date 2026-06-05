@@ -54,19 +54,20 @@
 
                                 <!-- Parte 2: precio unitario -->
                                 <p class="cart-price">{{ item.producto.precio|floatformat:0|intcomma }}</p>
-                        
+
                                 <!-- Parte 3: cantidad -->
                                 <div class="cart-quantity">
-                                    <!--<button>-</button>-->
+
                                     <a href="{% url 'disminuir_cantidad' item.id %}">
                                         <i class="bi bi-dash"></i>
                                     </a>
-                                    <span> {{ item.cantidad }} </span>
+                                    <span>{{ item.cantidad }}</span>
                                     <a href="{% url 'aumentar_cantidad' item.id %}">
                                         <i class="bi bi-plus-lg"></i>
                                     </a>
-                                    <!--<button>+</button>-->
+                                    
                                 </div>
+
                         
                                 <!-- Parte 4: subtotal -->
                                 <p class="cart-subtotal">{{ item.subtotal|floatformat:0|intcomma }}</p>
@@ -190,47 +191,6 @@
             <a href="{% url 'categorias' %}">
                 <button class="btn-Scompra"><i class="bi bi-arrow-left"></i> Seguir comprando</button>
             </a>
-        </section>
-
-        <!--BENEFICIOS-->
-        <section class="cart-benefits benefits-movil">
-            <div class="card mb-3">     
-                <div class="benefits-list">
-
-                    <div class="benefits-body">
-                        <i class="bi bi-shield-check benefits-icon"></i>
-                        <div>
-                            <h5 class="benefits-title">Compra segura</h5>
-                            <p class="benefits-text">Tus datos están protegidos con encriptación SSL.</p>
-                        </div>
-                    </div>
-
-                    <div class="benefits-body">
-                        <i class="bi bi-truck benefits-icon"></i>
-                        <div>
-                            <h5 class="benefits-title">Envío gratis</h5>
-                            <p class="benefits-text">En compras mayores a $50 mil</p>
-                        </div>
-                    </div>
-
-                    <div class="benefits-body">
-                        <i class="bi bi-award benefits-icon"></i>
-                        <div>
-                            <h5 class="benefits-title">Garantía oficial</h5>
-                            <p class="benefits-text">Productos 100% originales con garantía del fabricante.</p>
-                        </div>
-                    </div>
-
-                    <div class="benefits-body">
-                        <i class="bi bi-headset benefits-icon"></i>
-                        <div>
-                            <h5 class="benefits-title">Soporte 24/7</h5>
-                            <p class="benefits-text">Asistencia personalizada cuando la necesites.</p>                    
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </section>
 
         <!--MÉTODO DE PAGO-->

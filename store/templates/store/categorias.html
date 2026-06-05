@@ -229,6 +229,7 @@
 
                 <section class="main-category-card">
                     {% for producto in productos %}
+                    <a href="{{ producto.get_absolute_url }}" class="category-link">
                         <div class="category-card">
                             {% if producto.imagen %}
                                 <img src="{{ producto.imagen.url }}" class="category-img" alt="">
@@ -248,6 +249,7 @@
                                 </div>
                                 </div>
                         </div>
+                    </a>
                     {% endfor %}
                 </section>
                 
