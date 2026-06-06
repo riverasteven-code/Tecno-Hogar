@@ -14,4 +14,5 @@ urlpatterns = [
     path('aumentar-cantidad/<int:item_id>/', views.aumentar_cantidad, name='aumentar_cantidad'),
     path('disminuir_cantidad/<int:item_id>/', views.disminuir_cantidad, name='disminuir_cantidad'),
     path('logout/', views.logout_user, name='logout'),
+    path('categoria/<slug:slug>/', views.categoria_detalle, name = 'categoria_detalle'),
 ]

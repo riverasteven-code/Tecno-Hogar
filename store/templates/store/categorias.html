@@ -15,8 +15,20 @@
     </nav>
 
    <div class="filters-header">
-        <h2 class="filters-title">Laptops</h2>
-        <p class="filters-subtitle">Encuentra los mejores portátiles para estudiar, trabajar y jugar</p>
+
+        {% if query %}
+            <h2 class="filters-title">Resultado para "{{ query }}"</h2>
+            <p class="filters-subtitle">Productos encontrados según tu búsqueda.</p>
+
+        {% elif categorias %}
+            <h2 class="filters-title"> {{ categoria.nombre }}</h2>
+            <p class="filters-subtitle">{{ categoria.descripcion }}</p>
+
+        {% else %}
+            <h2 class="filters-title"> Todos los producto </h2>
+            <p class="filters-subtitle">Explora todos los productos disponibles en TecnoHogar.</p>
+        {% endif %}
+
     </div> 
 
 </section>
@@ -215,16 +227,24 @@
             <section class="products-area">
 
                 <div class="products-toolbar">
-                    <p class="products-count">128 productos encontrados</p>
+                    <p class="products-count">{{ cantidad_productos}} productos encontrados</p>
 
-                    <div class="products-tool">
+                    <form method="GET" class="products-tool">
+
+                        {% if query %}
+                            <input type="hidden" name="q" value="{{ query }}">
+                        {% endif %}
+                        
                         <p class="products-sort">Ordenado por:</p>
-                        <select  id="orden" class="dropdown">
-                            <option value="recientes">Más recientes</option>
-                            <option value="antiguos">Más antiguos</option>
-                            <option value="populares">Más populares</option>
+
+                        <select  id="orden" name="orden" class="dropdown" onchange="this.form.submit()">
+                            <option value="recientes" {% if orden == 'recientes' %} selected {% endif %}> Más recientes</option>
+                            <option value="antiguos" {% if orden == 'antiguos' %} selected {% endif %}>  Más antiguos</option>
+                            <option value="populares" {% if orden == 'populares' %} selected {% endif %}> Más populares</option>
                         </select>
-                    </div>
+                        
+                    </form>
+
                 </div>
 
                 <section class="main-category-card">

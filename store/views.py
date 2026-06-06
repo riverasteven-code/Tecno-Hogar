@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Producto, Carrito, ItemCarrito
+from .models import Producto, Categoria, Carrito, ItemCarrito
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth import logout
 from django.contrib import messages
+from django.db.models import Q
 
 def home(request):
     productos = Producto.objects.filter(disponible=True)
@@ -102,9 +103,54 @@ def register(request):
     return render(request, 'store/register.html')
 
 def categorias(request):
+
+    query = request.GET.get('q')
+    orden = request.GET.get('orden')
     productos = Producto.objects.filter(disponible=True)
-    contexto = {'productos': productos}
+
+    if query:
+        productos = productos.filter(
+                Q(nombre__icontains = query) |
+                Q(marca__icontains = query) |
+                Q(descripcion_corta__icontains = query) |
+                Q(categoria__nombre__icontains = query)
+        )
+    
+    if orden == 'recientes':
+        productos = productos.order_by('-fecha_creacion')
+    elif orden == 'antiguos':
+        productos = productos.order_by('fecha_creacion')
+    elif orden == 'populares':
+        productos = productos.order_by('-rating')
+
+    contexto = {
+        'productos': productos,
+        'query': query,
+        'cantidad_productos': productos.count(),
+        'orden': orden,
+    }
     return render(request, 'store/categorias.html', contexto)
+
+def categoria_detalle (request, slug):
+    categoria = get_object_or_404 (Categoria, slug = slug)
+    productos = Producto.objects.filter(categoria=categoria, disponible=True)
+    orden = request.GET.get('orden')
+
+    if orden == 'recientes':
+        productos = productos.order_by('-fecha_creacion')
+    elif orden == 'antiguos':
+        productos = productos.order_by('fecha_creacion')
+    elif orden == 'populares':
+        productos = productos.order_by('-rating')
+
+    contexto = {
+        'categoria': categoria,
+        'productos': productos,
+        'cantidad_productos': productos.count(),
+        'orden': orden,
+    } 
+
+    return render (request, 'store/categorias.html', contexto)
 
 def eliminar_item_carrito(request, item_id):
     item = get_object_or_404(ItemCarrito, id=item_id)
