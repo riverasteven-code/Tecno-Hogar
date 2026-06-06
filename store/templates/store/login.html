@@ -19,7 +19,7 @@
 
             <div class="login-container container-l">
 
-                <a class="navbar-brand" href="#">Tecno <span class="brand-highlight">Hogar</span></a>
+                <a class="navbar-brand" href="{% url 'home' %}">Tecno <span class="brand-highlight">Hogar</span></a>
 
                 <h2 class="login-title">Iniciar sesión</h2>
                 <p class="login-subtitle">Accede a tu cuenta para continuar comprando</p>
@@ -34,18 +34,20 @@
                         </div>
                     </div>
 
+<!--////////////////////////////////////////////////////-->
                     <div class="login-password">
                         <p>Contraseña</p>
-                        <div class="input-box">
+                        <div class="input-box" >
                             <i class="bi bi-lock input-icon"></i>
-                            <input type="password" name="password1" placeholder="********">
+                            <input type="password" class="box" name="password1" placeholder="********">
                             <i class="bi bi-eye-slash input-eye"></i>
                         </div> 
                     </div>
+<!--////////////////////////////////////////////////////-->
 
                     <div class="login-box">
                         <div>
-                            <input class="box" type="checkbox" id="remember" checked|>
+                            <input type="checkbox" id="remember" checked|>
                             <label for="remember">Recordarme</label>
                         </div>
 

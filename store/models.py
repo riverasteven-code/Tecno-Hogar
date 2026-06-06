@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Aquí crearemos la clase Categoria
 
@@ -85,3 +86,24 @@ class ItemCarrito  (models.Model):
 
     def __str__(self):
         return f"{self.cantidad} x {self.producto.nombre}"
+    
+class Orden (models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.SET_NULL, null = True, blank = True)
+    total = models.DecimalField (max_digits = 10, decimal_places = 2, default = 0)
+    fecha_creacion = models.DateTimeField (auto_now_add = True)
+
+    def __str__(self):
+        return f"Orden #{self.id}"
+
+class ItemOrden (models.Model):
+    orden = models.ForeignKey (Orden, on_delete = models.CASCADE, related_name='items')
+    producto = models.ForeignKey (Producto, on_delete= models.SET_NULL, null = True)
+    cantidad = models.PositiveBigIntegerField (default=1)
+    precio = models.DecimalField (max_digits=10, decimal_places=2)
+
+    def subtotal(self):
+        return self.precio * self.cantidad
+    
+    def __str__(self):
+        return f"{self.cantidad} x {self.producto.nombre}"
+    

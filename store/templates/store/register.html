@@ -19,7 +19,7 @@
 
             <div class="register-container container-r">
 
-                <a class="navbar-brand" href="#">Tecno <span class="brand-highlight">Hogar</span></a>
+                <a class="navbar-brand" href="{% url 'home' %}">Tecno <span class="brand-highlight">Hogar</span></a>
 
                 
                 <h2 class="register-title">Crear cuenta</h2>
@@ -50,29 +50,31 @@
                         </div>
                     </div>
 
+<!--////////////////////////////////////////////////////-->
+
                     <div class="login-password">
                         <p>Contraseña</p>
                         <div class="input-box-register">
                             <i class="bi bi-lock input-icon-register"></i>
-                            <input type="password" name="password1" placeholder="********">
+                            <input type="password" class="box"  name="password1" placeholder="********">
                             <i class="bi bi-eye-slash input-eye"></i>
                         </div> 
                     </div>
-
 
                     <div class="login-password">
                         <p>Confirmar contraseña</p>
                         <div class="input-box-register">
                             <i class="bi bi-lock input-icon-register"></i>
-                            <input type="password" name="password2" placeholder="********">
+                            <input type="password" class="box"  name="password2" placeholder="********">
                             <i class="bi bi-eye-slash input-eye"></i>
                         </div> 
                     </div>
 
+<!--////////////////////////////////////////////////////-->
 
                     <div class="register-box">
                         <div>
-                            <input class="box" type="checkbox" id="remember" >
+                            <input type="checkbox" id="remember" >
                             <label for="remember">Acepto los términos y condiciones </label>
                         </div>
                     </div>

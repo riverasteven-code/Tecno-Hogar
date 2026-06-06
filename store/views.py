@@ -55,7 +55,7 @@ def agregar_carrito(request, producto_id):
         item.cantidad += 1
         item.save()
 
-    return redirect('car')
+    return redirect(request.META.get ('HTTP_REFERER', 'home'))
 
 def login(request):
 
@@ -163,7 +163,6 @@ def aumentar_cantidad(request, item_id):
     item.save()
     return redirect('car')
 
-
 def disminuir_cantidad(request, item_id):
     item = get_object_or_404 (ItemCarrito, id=item_id)
     
@@ -174,7 +173,6 @@ def disminuir_cantidad(request, item_id):
         item.delete()
 
     return redirect( 'car' )
-
 
 def logout_user(request):
     logout(request)

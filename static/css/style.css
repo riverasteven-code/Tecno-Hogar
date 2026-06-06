@@ -76,6 +76,59 @@ body {
     color: #fff;               /* Texto blanco al pasar el mouse */
 }
 
+/* ========== BLOQUE dark: DARK ========== */
+/*#toggle {
+    display: none;
+}
+
+#label_toggle {
+    font-size: 2em;
+    color: #000;
+    cursor: pointer;
+}
+
+.dark{
+    background-color: #111827 !important;
+    color: white;
+    transition: all 1.5s ease;
+}
+
+.dark,
+.navbar {
+    background-color: #111827 !important;
+}
+
+.dark .navbar a,
+.dark .navbar-brand,
+.dark .nav-link {
+    color: white !important;
+}
+
+.dark .card,
+.dark .category-name,
+.dark .product-card {
+    background-color: #1f2937 !important;
+    color: white !important;
+}
+
+.dark .card-title,
+.dark .category-name,
+.dark .category-brand,
+.dark .category-specs {
+    color: white !important;
+}
+
+.dark .form-control,
+.dark .search-form input {
+    background-color: #1f2937 !important;
+    color: white !important;
+    border-color: #374151 !important;
+}
+
+.dark .form-control::placeholder {
+    color: #cdb5e1 !important;
+}*/
+
 /* ========== BLOQUE 4: CREAR CUENTA, INICIAR SESIÓN Y CARRITO ========== */
 
 /* Botón "Iniciar sesion" */
