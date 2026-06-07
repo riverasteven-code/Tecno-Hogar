@@ -275,6 +275,9 @@
 }
 
 .btn-compraf {
+    display: block;
+    text-align: center;
+    text-decoration: none;
     background-color: #007567;
     border-radius: 12px;
     font-size: 18px;

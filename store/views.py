@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Producto, Categoria, Carrito, ItemCarrito
+from .models import Producto, Categoria, Carrito, ItemCarrito, Orden, ItemOrden
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth import logout
@@ -178,4 +178,29 @@ def logout_user(request):
     logout(request)
     return redirect('home')
 
+def finalizar_compra(request):
+    carrito, creado = Carrito.objects.get_or_create(id=1)
+    items = carrito.items.all()
 
+    if not items:
+        return redirect('car')
+
+    orden = Orden.objects.create(
+        usuario=request.user if request.user.is_authenticated else None,
+        total=carrito.total()
+    )
+
+    for item in items:
+        ItemOrden.objects.create(
+            orden=orden,
+            producto=item.producto,
+            cantidad=item.cantidad,
+            precio=item.producto.precio
+        )
+
+    items.delete()
+
+    return redirect('compra_exitosa')
+
+def compra_exitosa(request):
+    return render(request, 'store/compra_exitosa.html')

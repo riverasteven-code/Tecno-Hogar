@@ -1,0 +1,17 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}Compra exitosa - TecnoHogar{% endblock %}
+
+{% block content %}
+
+<section class="container text-center" style="padding: 80px 20px;">
+    <h1>Compra realizada con éxito</h1>
+    <p>Gracias por comprar en TecnoHogar.</p>
+
+    <a href="{% url 'home' %}" class="btn btn-primary">
+        Volver al inicio
+    </a>
+</section>
+
+{% endblock %}

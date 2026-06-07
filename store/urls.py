@@ -15,4 +15,6 @@ urlpatterns = [
     path('disminuir_cantidad/<int:item_id>/', views.disminuir_cantidad, name='disminuir_cantidad'),
     path('logout/', views.logout_user, name='logout'),
     path('categoria/<slug:slug>/', views.categoria_detalle, name = 'categoria_detalle'),
+    path('finalizar-compra/', views.finalizar_compra, name='finalizar_compra'),
+    path('compra-exitosa/', views.compra_exitosa, name='compra_exitosa'),
 ]

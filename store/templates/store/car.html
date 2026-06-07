@@ -187,7 +187,11 @@
 
             <input type="text" class="coupon-input" placeholder="Ingresa tu cupón de descuento">
             <button class="btn-cupon">Aplicar cupón</button>
-            <button class="btn-compraf"><i class="bi bi-lock"></i> Finalizar compra</button>
+
+            <a href="{% url 'finalizar_compra' %}" class="btn-compraf">
+                <i class="bi bi-lock"></i> Finalizar compra
+            </a>
+            
             <a href="{% url 'categorias' %}">
                 <button class="btn-Scompra"><i class="bi bi-arrow-left"></i> Seguir comprando</button>
             </a>
